@@ -6,6 +6,8 @@
 
 #include "ui/tamperer_window.h"
 
+#include <wrl/client.h>
+
 // imgui_impl_win32.h intentionally omits this declaration (to avoid forcing
 // <windows.h> on every consumer) and asks callers to copy it in manually.
 // NOTE: must keep this exact name - it's the real symbol imgui exports, not
@@ -28,6 +30,13 @@ reset o_reset = nullptr;
 end_scene o_end_scene = nullptr;
 WNDPROC g_wnd_proc_original = nullptr;
 std::once_flag g_imgui_init_once;
+
+struct d3d_device_cached {
+    LPDIRECT3DDEVICE9 device;
+    HWND focus_window;
+} d3d_device_cache;
+
+bool imgui_wait_reinit;
 
 LRESULT __stdcall CALLBACK hk_wnd_proc(HWND h_wnd, UINT u_msg, WPARAM w_param, LPARAM l_param)
 {
@@ -54,6 +63,22 @@ long __stdcall hk_reset(LPDIRECT3DDEVICE9 p_device, D3DPRESENT_PARAMETERS* p_pre
     // TestCooperativeLevel() every frame and simply won't render ImGui until
     // a later Reset() succeeds and gets us back here.
     if(imgui_ready && SUCCEEDED(result)) {
+        if(imgui_wait_reinit) {
+            ImGui_ImplWin32_Shutdown();
+            ImGui_ImplDX9_Shutdown();
+        
+            D3DDEVICE_CREATION_PARAMETERS params;
+            p_device->GetCreationParameters(&params);
+
+            ImGui_ImplWin32_Init(params.hFocusWindow);
+            ImGui_ImplDX9_Init(p_device);
+
+            d3d_device_cache.device = p_device;
+            d3d_device_cache.focus_window = params.hFocusWindow;
+
+            imgui_wait_reinit = false;
+        }
+
         ImGui_ImplDX9_CreateDeviceObjects();
     }
 
@@ -75,17 +100,27 @@ long __stdcall hk_end_scene(LPDIRECT3DDEVICE9 p_device)
     // or reset-pending (the game hasn't called Reset() again yet - see
     // hk_reset() above). Either way, wait for it to come back instead of
     // touching ImGui - device objects may not exist right now.
-    if(p_device->TestCooperativeLevel() == D3D_OK) {
-        std::call_once(g_imgui_init_once, [p_device] {
-            D3DDEVICE_CREATION_PARAMETERS params;
-            p_device->GetCreationParameters(&params);
+    D3DDEVICE_CREATION_PARAMETERS params;
+    p_device->GetCreationParameters(&params);
 
+    if(p_device->TestCooperativeLevel() == D3D_OK) {
+        std::call_once(g_imgui_init_once, [p_device, &params] {
             ImGui::CreateContext();
             ImGui_ImplWin32_Init(params.hFocusWindow);
             ImGui_ImplDX9_Init(p_device);
 
             ui::init_file_dialogs();
+
+            d3d_device_cache.device = p_device;
+            d3d_device_cache.focus_window = params.hFocusWindow;
         });
+
+        if(d3d_device_cache.device != p_device || d3d_device_cache.focus_window != params.hFocusWindow || imgui_wait_reinit) {
+            imgui_wait_reinit = true;
+            d3d_device_cache.device = p_device;
+            d3d_device_cache.focus_window = params.hFocusWindow;
+            return o_end_scene(p_device);
+        }
 
         if(hooks::g_show_menu) {
             ImGui_ImplDX9_NewFrame();
@@ -108,7 +143,6 @@ long __stdcall hk_end_scene(LPDIRECT3DDEVICE9 p_device)
 
     return o_end_scene(p_device);
 }
-
 } // namespace
 
 namespace hooks
