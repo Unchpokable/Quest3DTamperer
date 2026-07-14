@@ -343,7 +343,3 @@ healthchecksdb
 /build/
 /out/
 CMakeUserPresets.json
-
-# Quest3D SDK is proprietary and must never be committed - point CMake's
-# Q3D_SDK_DIR at your own local copy instead (see cmake/Quest3DSDK.cmake).
-/Quest3DTamperer/q3d SDK/
