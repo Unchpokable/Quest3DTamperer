@@ -1,0 +1,11 @@
+[1/11] Copying compile_commands.json (Release) to build/
+[2/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\quest3d\state.cpp.obj
+[3/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\hooks\channel_hook.cpp.obj
+[4/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\hooks\d3d9_hooks.cpp.obj
+[5/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\main.cpp.obj
+[6/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\quest3d\api.cpp.obj
+[7/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\util\clipboard.cpp.obj
+[8/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\util\text_convert.cpp.obj
+[9/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\graph\channel_graph_dump.cpp.obj
+[10/11] Building CXX object CMakeFiles\Quest3DTamperer.dir\Quest3DTamperer\src\ui\tamperer_window.cpp.obj
+[11/11] Linking CXX shared library bin\Quest3DTamperer.dll

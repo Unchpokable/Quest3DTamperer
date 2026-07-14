@@ -1,0 +1,1451 @@
+[1/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp.
+[2/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp.
+[3/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp.
+[4/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp.
+[5/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\state.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\state.cpp.
+[6/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp.
+[7/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp.
+[8/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\clipboard.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\clipboard.cpp.
+[9/9] Processing file C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp.
+Error while processing C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp.
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:16:13: warning: invalid case style for function 'GetChannelValue' [readability-identifier-naming]
+   16 | std::string GetChannelValue(A3d_Channel* channel)
+      |             ^~~~~~~~~~~~~~~
+      |             get_channel_value
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:16:13: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:65:40: note: FIX-IT applied suggested code changes
+   65 |             std::string channelValue = GetChannelValue(channel);
+      |                                        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:18:14: warning: invalid case style for variable 'guidOLECHAR' [readability-identifier-naming]
+   18 |     OLECHAR* guidOLECHAR;
+      |              ^~~~~~~~~~~
+      |              guid_olechar
+   19 |     StringFromCLSID(channel->GetChannelType().guid, &guidOLECHAR);
+      |                                                      ~~~~~~~~~~~
+      |                                                      guid_olechar
+   20 |     std::wstring wstring = std::wstring(guidOLECHAR);
+      |                                         ~~~~~~~~~~~
+      |                                         guid_olechar
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:18:14: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:19:54: note: FIX-IT applied suggested code changes
+   19 |     StringFromCLSID(channel->GetChannelType().guid, &guidOLECHAR);
+      |                                                      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:20:41: note: FIX-IT applied suggested code changes
+   20 |     std::wstring wstring = std::wstring(guidOLECHAR);
+      |                                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:25:14: warning: invalid case style for variable 'channelString' [readability-identifier-naming]
+   25 |         auto channelString = StringChannel_GetString((Aco_StringChannel*)channel);
+      |              ^~~~~~~~~~~~~
+      |              channel_string
+   26 |         if(channelString) {
+      |            ~~~~~~~~~~~~~
+      |            channel_string
+   27 |             return channelString;
+      |                    ~~~~~~~~~~~~~
+      |                    channel_string
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:25:14: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:26:12: note: FIX-IT applied suggested code changes
+   26 |         if(channelString) {
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:27:20: note: FIX-IT applied suggested code changes
+   27 |             return channelString;
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:32:21: warning: invalid case style for variable 'resultString' [readability-identifier-naming]
+   32 |         std::string resultString;
+      |                     ^~~~~~~~~~~~
+      |                     result_string
+   33 |         resultString += std::to_string(Aco_FloatChannel_GetFloat(channel));
+      |         ~~~~~~~~~~~~
+      |         result_string
+   34 |         resultString += "\nDefault Value: ";
+      |         ~~~~~~~~~~~~
+      |         result_string
+   35 |         resultString += std::to_string(Aco_FloatChannel_GetDefaultFloat(channel));
+      |         ~~~~~~~~~~~~
+      |         result_string
+   36 |         return resultString;
+      |                ~~~~~~~~~~~~
+      |                result_string
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:32:21: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:33:9: note: FIX-IT applied suggested code changes
+   33 |         resultString += std::to_string(Aco_FloatChannel_GetFloat(channel));
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:34:9: note: FIX-IT applied suggested code changes
+   34 |         resultString += "\nDefault Value: ";
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:35:9: note: FIX-IT applied suggested code changes
+   35 |         resultString += std::to_string(Aco_FloatChannel_GetDefaultFloat(channel));
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:36:16: note: FIX-IT applied suggested code changes
+   36 |         return resultString;
+      |                ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:39:14: warning: invalid case style for variable 'channelString' [readability-identifier-naming]
+   39 |         auto channelString = StringOperator_GetString(channel);
+      |              ^~~~~~~~~~~~~
+      |              channel_string
+   40 |         if(channelString) {
+      |            ~~~~~~~~~~~~~
+      |            channel_string
+   41 |             return channelString;
+      |                    ~~~~~~~~~~~~~
+      |                    channel_string
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:39:14: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:40:12: note: FIX-IT applied suggested code changes
+   40 |         if(channelString) {
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:41:20: note: FIX-IT applied suggested code changes
+   41 |             return channelString;
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:58:18: warning: invalid case style for variable 'channelGuid' [readability-identifier-naming]
+   58 |             GUID channelGuid(channel->GetChannelType().guid);
+      |                  ^~~~~~~~~~~
+      |                  channel_guid
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:58:18: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:61:25: warning: invalid case style for variable 'nodeLabel' [readability-identifier-naming]
+   61 |             std::string nodeLabel;
+      |                         ^~~~~~~~~
+      |                         node_label
+   62 |             nodeLabel += Channel_GetChannelName(channel);
+      |             ~~~~~~~~~
+      |             node_label
+   63 |             nodeLabel += "\\n";
+      |             ~~~~~~~~~
+      |             node_label
+   64 |             nodeLabel += channel->GetChannelType().name;
+      |             ~~~~~~~~~
+      |             node_label
+   65 |             std::string channelValue = GetChannelValue(channel);
+   66 |             // Backslashes need to be escaped.
+   67 |             util::ReplaceAll(channelValue, "\\", "\\\\");
+   68 |             // Graphviz can't cope with newlines either, so they need to be replaced with the literal "\n".
+   69 |             util::ReplaceAll(channelValue, "\r\n", "\\n");
+   70 |             util::ReplaceAll(channelValue, "\n", "\\n");
+   71 |             // Escape quotes as well.
+   72 |             util::ReplaceAll(channelValue, "\"", "\\\"");
+   73 |             if(!channelValue.empty()) {
+   74 |                 nodeLabel += "\\nChannel value: ";
+      |                 ~~~~~~~~~
+      |                 node_label
+   75 |                 nodeLabel += channelValue;
+      |                 ~~~~~~~~~
+      |                 node_label
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:61:25: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:62:13: note: FIX-IT applied suggested code changes
+   62 |             nodeLabel += Channel_GetChannelName(channel);
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:63:13: note: FIX-IT applied suggested code changes
+   63 |             nodeLabel += "\\n";
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:64:13: note: FIX-IT applied suggested code changes
+   64 |             nodeLabel += channel->GetChannelType().name;
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:74:17: note: FIX-IT applied suggested code changes
+   74 |                 nodeLabel += "\\nChannel value: ";
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:75:17: note: FIX-IT applied suggested code changes
+   75 |                 nodeLabel += channelValue;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:77:69: note: FIX-IT applied suggested code changes
+   77 |             registry.RegisterNodeAttr(node, UGraphviz::Attrs_label, nodeLabel);
+      |                                                                     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:65:25: warning: invalid case style for variable 'channelValue' [readability-identifier-naming]
+   65 |             std::string channelValue = GetChannelValue(channel);
+      |                         ^~~~~~~~~~~~
+      |                         channel_value
+   66 |             // Backslashes need to be escaped.
+   67 |             util::ReplaceAll(channelValue, "\\", "\\\\");
+      |                              ~~~~~~~~~~~~
+      |                              channel_value
+   68 |             // Graphviz can't cope with newlines either, so they need to be replaced with the literal "\n".
+   69 |             util::ReplaceAll(channelValue, "\r\n", "\\n");
+      |                              ~~~~~~~~~~~~
+      |                              channel_value
+   70 |             util::ReplaceAll(channelValue, "\n", "\\n");
+      |                              ~~~~~~~~~~~~
+      |                              channel_value
+   71 |             // Escape quotes as well.
+   72 |             util::ReplaceAll(channelValue, "\"", "\\\"");
+      |                              ~~~~~~~~~~~~
+      |                              channel_value
+   73 |             if(!channelValue.empty()) {
+      |                 ~~~~~~~~~~~~
+      |                 channel_value
+   74 |                 nodeLabel += "\\nChannel value: ";
+   75 |                 nodeLabel += channelValue;
+      |                              ~~~~~~~~~~~~
+      |                              channel_value
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:65:25: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:67:30: note: FIX-IT applied suggested code changes
+   67 |             util::ReplaceAll(channelValue, "\\", "\\\\");
+      |                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:69:30: note: FIX-IT applied suggested code changes
+   69 |             util::ReplaceAll(channelValue, "\r\n", "\\n");
+      |                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:70:30: note: FIX-IT applied suggested code changes
+   70 |             util::ReplaceAll(channelValue, "\n", "\\n");
+      |                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:72:30: note: FIX-IT applied suggested code changes
+   72 |             util::ReplaceAll(channelValue, "\"", "\\\"");
+      |                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:73:17: note: FIX-IT applied suggested code changes
+   73 |             if(!channelValue.empty()) {
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\graph\channel_graph_dump.cpp:75:30: note: FIX-IT applied suggested code changes
+   75 |                 nodeLabel += channelValue;
+      |                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:13:18: warning: invalid case style for variable 'TrueCallChannel' [readability-identifier-naming]
+   13 | void(__thiscall* TrueCallChannel)(A3d_Channel* self) = nullptr;
+      |                  ^~~~~~~~~~~~~~~
+      |                  true_call_channel
+   14 | 
+   15 | void __fastcall CallChannelHook(A3d_Channel* self, DWORD /*edx*/)
+   16 | {
+   17 |     TrueCallChannel(self);
+      |     ~~~~~~~~~~~~~~~
+      |     true_call_channel
+   18 |     if(quest3d::g_engine == nullptr) {
+   19 |         quest3d::g_engine = self->engine;
+   20 |     }
+   21 | }
+   22 | 
+   23 | } // namespace
+   24 | 
+   25 | void InstallChannelHook()
+   26 | {
+   27 |     TrueCallChannel = (void(__thiscall*)(A3d_Channel*))DetourFindFunction("highpoly.dll", "?CallChannel@A3d_Channel@@UAEXXZ");
+      |     ~~~~~~~~~~~~~~~
+      |     true_call_channel
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:13:18: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:17:5: note: FIX-IT applied suggested code changes
+   17 |     TrueCallChannel(self);
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:27:5: note: FIX-IT applied suggested code changes
+   27 |     TrueCallChannel = (void(__thiscall*)(A3d_Channel*))DetourFindFunction("highpoly.dll", "?CallChannel@A3d_Channel@@UAEXXZ");
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:31:27: note: FIX-IT applied suggested code changes
+   31 |     DetourAttach(&(PVOID&)TrueCallChannel, CallChannelHook);
+      |                           ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:13:18: warning: variable 'TrueCallChannel' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   13 | void(__thiscall* TrueCallChannel)(A3d_Channel* self) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:13:18: warning: variable 'TrueCallChannel' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:15:17: warning: invalid case style for function 'CallChannelHook' [readability-identifier-naming]
+   15 | void __fastcall CallChannelHook(A3d_Channel* self, DWORD /*edx*/)
+      |                 ^~~~~~~~~~~~~~~
+      |                 call_channel_hook
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:15:17: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:31:44: note: FIX-IT applied suggested code changes
+   31 |     DetourAttach(&(PVOID&)TrueCallChannel, CallChannelHook);
+      |                                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\channel_hook.cpp:31:44: warning: implicit conversion between pointer-to-function and pointer-to-object is a Microsoft extension [clang-diagnostic-microsoft-cast]
+   31 |     DetourAttach(&(PVOID&)TrueCallChannel, CallChannelHook);
+      |                                            ^~~~~~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:31: warning: invalid case style for function 'ImGui_ImplWin32_WndProcHandler' [readability-identifier-naming]
+   10 | extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               im_gui_impl_win32_wnd_proc_handler
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:31: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:28:8: note: FIX-IT applied suggested code changes
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:67: warning: invalid case style for parameter 'hWnd' [readability-identifier-naming]
+   10 | extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+      |                                                                   ^~~~
+      |                                                                   h_wnd
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:67: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:90: warning: invalid case style for parameter 'wParam' [readability-identifier-naming]
+   10 | extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+      |                                                                                          ^~~~~~
+      |                                                                                          w_param
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:90: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:105: warning: invalid case style for parameter 'lParam' [readability-identifier-naming]
+   10 | extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+      |                                                                                                         ^~~~~~
+      |                                                                                                         l_param
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:10:105: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:18:7: warning: invalid case style for type alias 'Reset' [readability-identifier-naming]
+   18 | using Reset = long(__stdcall*)(LPDIRECT3DDEVICE9, D3DPRESENT_PARAMETERS*);
+      |       ^~~~~
+      |       reset
+   19 | using EndScene = long(__stdcall*)(LPDIRECT3DDEVICE9);
+   20 | 
+   21 | Reset oReset = nullptr;
+      | ~~~~~
+      | reset
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:18:7: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:21:1: note: FIX-IT applied suggested code changes
+   21 | Reset oReset = nullptr;
+      | ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:19:7: warning: invalid case style for type alias 'EndScene' [readability-identifier-naming]
+   19 | using EndScene = long(__stdcall*)(LPDIRECT3DDEVICE9);
+      |       ^~~~~~~~
+      |       end_scene
+   20 | 
+   21 | Reset oReset = nullptr;
+   22 | EndScene oEndScene = nullptr;
+      | ~~~~~~~~
+      | end_scene
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:19:7: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:22:1: note: FIX-IT applied suggested code changes
+   22 | EndScene oEndScene = nullptr;
+      | ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:21:7: warning: invalid case style for variable 'oReset' [readability-identifier-naming]
+   21 | Reset oReset = nullptr;
+      |       ^~~~~~
+      |       o_reset
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:21:7: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:37:19: note: FIX-IT applied suggested code changes
+   37 |     long result = oReset(pDevice, pPresentationParameters);
+      |                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:21:7: warning: variable 'oReset' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   21 | Reset oReset = nullptr;
+      |       ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:22:10: warning: invalid case style for variable 'oEndScene' [readability-identifier-naming]
+   22 | EndScene oEndScene = nullptr;
+      |          ^~~~~~~~~
+      |          o_end_scene
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:22:10: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:81:12: note: FIX-IT applied suggested code changes
+   81 |     return oEndScene(pDevice);
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:22:10: warning: variable 'oEndScene' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   22 | EndScene oEndScene = nullptr;
+      |          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:23:9: warning: invalid case style for variable 'g_wndProcOriginal' [readability-identifier-naming]
+   23 | WNDPROC g_wndProcOriginal = nullptr;
+      |         ^~~~~~~~~~~~~~~~~
+      |         g_wnd_proc_original
+   24 | bool g_imguiInitialized = false;
+   25 | 
+   26 | LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+   27 | {
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+   29 |         return true;
+   30 | 
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                           ~~~~~~~~~~~~~~~~~
+      |                           g_wnd_proc_original
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:23:9: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:31:27: note: FIX-IT applied suggested code changes
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                           ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:96:5: note: FIX-IT applied suggested code changes
+   96 |     g_wndProcOriginal = (WNDPROC)SetWindowLong(quest3d::g_gameHandle, GWL_WNDPROC, (LRESULT)hkWndProc);
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:23:9: warning: variable 'g_wndProcOriginal' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   23 | WNDPROC g_wndProcOriginal = nullptr;
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:24:6: warning: invalid case style for variable 'g_imguiInitialized' [readability-identifier-naming]
+   24 | bool g_imguiInitialized = false;
+      |      ^~~~~~~~~~~~~~~~~~
+      |      g_imgui_initialized
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:24:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:46:9: note: FIX-IT applied suggested code changes
+   46 |         g_imguiInitialized = false;
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:50:9: note: FIX-IT applied suggested code changes
+   50 |     if(!g_imguiInitialized) {
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:60:9: note: FIX-IT applied suggested code changes
+   60 |         g_imguiInitialized = true;
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:24:6: warning: variable 'g_imguiInitialized' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   24 | bool g_imguiInitialized = false;
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:28: warning: invalid case style for function 'hkWndProc' [readability-identifier-naming]
+   26 | LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+      |                            ^~~~~~~~~
+      |                            hk_wnd_proc
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:28: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:96:93: note: FIX-IT applied suggested code changes
+   96 |     g_wndProcOriginal = (WNDPROC)SetWindowLong(quest3d::g_gameHandle, GWL_WNDPROC, (LRESULT)hkWndProc);
+      |                                                                                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:43: warning: invalid case style for parameter 'hWnd' [readability-identifier-naming]
+   26 | LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+      |                                           ^~~~
+      |                                           h_wnd
+   27 | {
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                       ~~~~
+      |                                       h_wnd
+   29 |         return true;
+   30 | 
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                              ~~~~
+      |                                              h_wnd
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:43: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:28:39: note: FIX-IT applied suggested code changes
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                       ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:31:46: note: FIX-IT applied suggested code changes
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:54: warning: invalid case style for parameter 'uMsg' [readability-identifier-naming]
+   26 | LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+      |                                                      ^~~~
+      |                                                      u_msg
+   27 | {
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                             ~~~~
+      |                                             u_msg
+   29 |         return true;
+   30 | 
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                                    ~~~~
+      |                                                    u_msg
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:54: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:28:45: note: FIX-IT applied suggested code changes
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:31:52: note: FIX-IT applied suggested code changes
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:67: warning: invalid case style for parameter 'wParam' [readability-identifier-naming]
+   26 | LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+      |                                                                   ^~~~~~
+      |                                                                   w_param
+   27 | {
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                                   ~~~~~~
+      |                                                   w_param
+   29 |         return true;
+   30 | 
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                                          ~~~~~~
+      |                                                          w_param
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:67: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:28:51: note: FIX-IT applied suggested code changes
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:31:58: note: FIX-IT applied suggested code changes
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:82: warning: invalid case style for parameter 'lParam' [readability-identifier-naming]
+   26 | LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+      |                                                                                  ^~~~~~
+      |                                                                                  l_param
+   27 | {
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                                           ~~~~~~
+      |                                                           l_param
+   29 |         return true;
+   30 | 
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                                                  ~~~~~~
+      |                                                                  l_param
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:26:82: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:28:59: note: FIX-IT applied suggested code changes
+   28 |     if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+      |                                                           ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:31:66: note: FIX-IT applied suggested code changes
+   31 |     return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+      |                                                                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:34:16: warning: invalid case style for function 'hkReset' [readability-identifier-naming]
+   34 | long __stdcall hkReset(LPDIRECT3DDEVICE9 pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters)
+      |                ^~~~~~~
+      |                hk_reset
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:34:16: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:34:42: warning: invalid case style for parameter 'pDevice' [readability-identifier-naming]
+   34 | long __stdcall hkReset(LPDIRECT3DDEVICE9 pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters)
+      |                                          ^~~~~~~
+      |                                          p_device
+   35 | {
+   36 |     ImGui_ImplDX9_InvalidateDeviceObjects();
+   37 |     long result = oReset(pDevice, pPresentationParameters);
+      |                          ~~~~~~~
+      |                          p_device
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:34:42: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:37:26: note: FIX-IT applied suggested code changes
+   37 |     long result = oReset(pDevice, pPresentationParameters);
+      |                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:34:74: warning: invalid case style for parameter 'pPresentationParameters' [readability-identifier-naming]
+   34 | long __stdcall hkReset(LPDIRECT3DDEVICE9 pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters)
+      |                                                                          ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                          p_presentation_parameters
+   35 | {
+   36 |     ImGui_ImplDX9_InvalidateDeviceObjects();
+   37 |     long result = oReset(pDevice, pPresentationParameters);
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~
+      |                                   p_presentation_parameters
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:34:74: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:37:35: note: FIX-IT applied suggested code changes
+   37 |     long result = oReset(pDevice, pPresentationParameters);
+      |                                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:43:16: warning: invalid case style for function 'hkEndScene' [readability-identifier-naming]
+   43 | long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
+      |                ^~~~~~~~~~
+      |                hk_end_scene
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:43:16: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:43:45: warning: invalid case style for parameter 'pDevice' [readability-identifier-naming]
+   43 | long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
+      |                                             ^~~~~~~
+      |                                             p_device
+   44 | {
+   45 |     if(g_forceImGuiReinit) {
+   46 |         g_imguiInitialized = false;
+   47 |         g_forceImGuiReinit = false;
+   48 |     }
+   49 | 
+   50 |     if(!g_imguiInitialized) {
+   51 |         D3DDEVICE_CREATION_PARAMETERS params;
+   52 |         pDevice->GetCreationParameters(&params);
+      |         ~~~~~~~
+      |         p_device
+   53 | 
+   54 |         ImGui::CreateContext();
+   55 |         ImGui_ImplWin32_Init(params.hFocusWindow);
+   56 |         ImGui_ImplDX9_Init(pDevice);
+      |                            ~~~~~~~
+      |                            p_device
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:43:45: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:52:9: note: FIX-IT applied suggested code changes
+   52 |         pDevice->GetCreationParameters(&params);
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:56:28: note: FIX-IT applied suggested code changes
+   56 |         ImGui_ImplDX9_Init(pDevice);
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:81:22: note: FIX-IT applied suggested code changes
+   81 |     return oEndScene(pDevice);
+      |                      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:86:6: warning: variable 'g_showMenu' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   86 | bool g_showMenu = false;
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:87:6: warning: variable 'g_forceImGuiReinit' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   87 | bool g_forceImGuiReinit = false;
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:94:40: warning: use nullptr [modernize-use-nullptr]
+   94 |     quest3d::g_gameHandle = FindWindow(NULL, L"Audiosurf");
+      |                                        ^~~~
+      |                                        nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:94:40: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\hooks\d3d9_hooks.cpp:96:71: error: use of undeclared identifier 'GWL_WNDPROC' [clang-diagnostic-error]
+   96 |     g_wndProcOriginal = (WNDPROC)SetWindowLong(quest3d::g_gameHandle, GWL_WNDPROC, (LRESULT)hkWndProc);
+      |                                                                       ^~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:10:14: warning: invalid case style for function 'HookInstallThread' [readability-identifier-naming]
+   10 | DWORD WINAPI HookInstallThread(LPVOID)
+      |              ^~~~~~~~~~~~~~~~~
+      |              hook_install_thread
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:10:14: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:35: note: FIX-IT applied suggested code changes
+   42 |             CreateThread(NULL, 0, HookInstallThread, NULL, 0, NULL);
+      |                                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:36:15: warning: invalid case style for function 'DllMain' [readability-identifier-naming]
+   36 | BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID /*lpReserved*/)
+      |               ^~~~~~~
+      |               dll_main
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:36:15: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:36:31: warning: invalid case style for parameter 'hModule' [readability-identifier-naming]
+   36 | BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID /*lpReserved*/)
+      |                               ^~~~~~~
+      |                               h_module
+   37 | {
+   38 |     DisableThreadLibraryCalls(hModule);
+      |                               ~~~~~~~
+      |                               h_module
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:36:31: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:38:31: note: FIX-IT applied suggested code changes
+   38 |     DisableThreadLibraryCalls(hModule);
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:40:5: warning: switching on non-enum value without default case may not cover all cases [bugprone-switch-missing-default-case]
+   40 |     switch(ul_reason_for_call) {
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:26: warning: use nullptr [modernize-use-nullptr]
+   42 |             CreateThread(NULL, 0, HookInstallThread, NULL, 0, NULL);
+      |                          ^~~~
+      |                          nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:26: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:54: warning: use nullptr [modernize-use-nullptr]
+   42 |             CreateThread(NULL, 0, HookInstallThread, NULL, 0, NULL);
+      |                                                      ^~~~
+      |                                                      nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:54: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:63: warning: use nullptr [modernize-use-nullptr]
+   42 |             CreateThread(NULL, 0, HookInstallThread, NULL, 0, NULL);
+      |                                                               ^~~~
+      |                                                               nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\main.cpp:42:63: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d/state.h:9:8: error: unknown type name 'EngineInterface' [clang-diagnostic-error]
+    9 | extern EngineInterface* g_engine;
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d/state.h:12:8: error: unknown type name 'HWND' [clang-diagnostic-error]
+   12 | extern HWND g_gameHandle;
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:8:25: warning: variable 'ChannelGroup_GetChannelGroupFileName' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+    8 | const char*(__thiscall* ChannelGroup_GetChannelGroupFileName)(A3d_ChannelGroup* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:8:25: warning: variable 'ChannelGroup_GetChannelGroupFileName' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:9:25: warning: variable 'ChannelGroup_GetPoolName' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+    9 | const char*(__thiscall* ChannelGroup_GetPoolName)(A3d_ChannelGroup* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:9:25: warning: variable 'ChannelGroup_GetPoolName' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:10:17: warning: variable 'ChannelGroup_GetChannelCount' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   10 | int(__thiscall* ChannelGroup_GetChannelCount)(A3d_ChannelGroup* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:10:17: warning: variable 'ChannelGroup_GetChannelCount' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:11:26: warning: variable 'ChannelGroup_GetChannel' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   11 | A3d_Channel*(__thiscall* ChannelGroup_GetChannel)(A3d_ChannelGroup* self, int) = nullptr;
+      |                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:11:26: warning: variable 'ChannelGroup_GetChannel' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:12:18: warning: variable 'ChannelGroup_GetGroupIsProtected' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   12 | bool(__thiscall* ChannelGroup_GetGroupIsProtected)(A3d_ChannelGroup* self) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:12:18: warning: variable 'ChannelGroup_GetGroupIsProtected' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:13:18: warning: variable 'ChannelGroup_GetReadOnly' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   13 | bool(__thiscall* ChannelGroup_GetReadOnly)(A3d_ChannelGroup* self) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:13:18: warning: variable 'ChannelGroup_GetReadOnly' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:14:18: warning: variable 'ChannelGroup_SetGroupIsProtected' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   14 | void(__thiscall* ChannelGroup_SetGroupIsProtected)(A3d_ChannelGroup* self, bool newValue) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:14:18: warning: variable 'ChannelGroup_SetGroupIsProtected' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:14:81: warning: invalid case style for parameter 'newValue' [readability-identifier-naming]
+   14 | void(__thiscall* ChannelGroup_SetGroupIsProtected)(A3d_ChannelGroup* self, bool newValue) = nullptr;
+      |                                                                                 ^~~~~~~~
+      |                                                                                 new_value
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:14:81: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:15:18: warning: variable 'ChannelGroup_SetReadOnly' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   15 | void(__thiscall* ChannelGroup_SetReadOnly)(A3d_ChannelGroup* self, bool newValue) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:15:18: warning: variable 'ChannelGroup_SetReadOnly' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:15:73: warning: invalid case style for parameter 'newValue' [readability-identifier-naming]
+   15 | void(__thiscall* ChannelGroup_SetReadOnly)(A3d_ChannelGroup* self, bool newValue) = nullptr;
+      |                                                                         ^~~~~~~~
+      |                                                                         new_value
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:15:73: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:16:18: warning: variable 'ChannelGroup_SaveChannelGroup' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   16 | bool(__thiscall* ChannelGroup_SaveChannelGroup)(A3d_ChannelGroup* self, const char* fileName) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:16:18: warning: variable 'ChannelGroup_SaveChannelGroup' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:16:85: warning: invalid case style for parameter 'fileName' [readability-identifier-naming]
+   16 | bool(__thiscall* ChannelGroup_SaveChannelGroup)(A3d_ChannelGroup* self, const char* fileName) = nullptr;
+      |                                                                                     ^~~~~~~~
+      |                                                                                     file_name
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:16:85: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:17:17: warning: variable 'ChannelGroup_GetGroupIndex' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   17 | int(__thiscall* ChannelGroup_GetGroupIndex)(A3d_ChannelGroup* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:17:17: warning: variable 'ChannelGroup_GetGroupIndex' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:18:18: warning: variable 'ChannelGroup_CallStartChannel' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   18 | void(__thiscall* ChannelGroup_CallStartChannel)(A3d_ChannelGroup* self) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:18:18: warning: variable 'ChannelGroup_CallStartChannel' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:20:25: warning: variable 'Channel_GetChannelName' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   20 | const char*(__thiscall* Channel_GetChannelName)(A3d_Channel* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:20:25: warning: variable 'Channel_GetChannelName' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:21:26: warning: variable 'Channel_GetChild' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   21 | A3d_Channel*(__thiscall* Channel_GetChild)(A3d_Channel* self, int childNr) = nullptr;
+      |                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:21:26: warning: variable 'Channel_GetChild' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:21:67: warning: invalid case style for parameter 'childNr' [readability-identifier-naming]
+   21 | A3d_Channel*(__thiscall* Channel_GetChild)(A3d_Channel* self, int childNr) = nullptr;
+      |                                                                   ^~~~~~~
+      |                                                                   child_nr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:21:67: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:22:17: warning: variable 'Channel_GetChildCount' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   22 | int(__thiscall* Channel_GetChildCount)(A3d_Channel* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:22:17: warning: variable 'Channel_GetChildCount' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:23:17: warning: variable 'Channel_GetChannelIDIndexNr' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   23 | int(__thiscall* Channel_GetChannelIDIndexNr)(A3d_Channel* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:23:17: warning: variable 'Channel_GetChannelIDIndexNr' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:25:25: warning: variable 'StringChannel_GetString' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   25 | const char*(__thiscall* StringChannel_GetString)(Aco_StringChannel* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:25:25: warning: variable 'StringChannel_GetString' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:26:25: warning: variable 'StringOperator_GetString' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   26 | const char*(__thiscall* StringOperator_GetString)(void* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:26:25: warning: variable 'StringOperator_GetString' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:27:25: warning: variable 'Lua_GetScript' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   27 | const char*(__thiscall* Lua_GetScript)(void* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:27:25: warning: variable 'Lua_GetScript' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:29:18: warning: variable 'StringChannel_SetString' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   29 | void(__thiscall* StringChannel_SetString)(Aco_StringChannel* self, const char* string) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:29:18: warning: variable 'StringChannel_SetString' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:30:18: warning: variable 'Lua_SetScript' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   30 | BOOL(__thiscall* Lua_SetScript)(void* self, const char* string) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:30:18: warning: variable 'Lua_SetScript' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:32:17: warning: variable 'Aco_DX8_Texture_GetDesiredWidth' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   32 | int(__thiscall* Aco_DX8_Texture_GetDesiredWidth)(Aco_DX8_Texture* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:32:17: warning: variable 'Aco_DX8_Texture_GetDesiredWidth' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:33:17: warning: variable 'Aco_DX8_Texture_GetDesiredHeight' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   33 | int(__thiscall* Aco_DX8_Texture_GetDesiredHeight)(Aco_DX8_Texture* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:33:17: warning: variable 'Aco_DX8_Texture_GetDesiredHeight' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:34:32: warning: variable 'Aco_DX8_Texture_GetTexture' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   34 | IDirect3DTexture9*(__thiscall* Aco_DX8_Texture_GetTexture)(Aco_DX8_Texture* self) = nullptr;
+      |                                ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:34:32: warning: variable 'Aco_DX8_Texture_GetTexture' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:35:19: warning: variable 'Aco_DX8_Texture_GetTextureBuffer' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   35 | char*(__thiscall* Aco_DX8_Texture_GetTextureBuffer)(Aco_DX8_Texture* self) = nullptr;
+      |                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:35:19: warning: variable 'Aco_DX8_Texture_GetTextureBuffer' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:36:17: warning: variable 'Aco_DX8_Texture_GetBufferSize' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   36 | int(__thiscall* Aco_DX8_Texture_GetBufferSize)(Aco_DX8_Texture* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:36:17: warning: variable 'Aco_DX8_Texture_GetBufferSize' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:37:18: warning: variable 'Aco_DX8_Texture_LoadTextureFromFile' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   37 | BOOL(__thiscall* Aco_DX8_Texture_LoadTextureFromFile)(Aco_DX8_Texture* self, char* path) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:37:18: warning: variable 'Aco_DX8_Texture_LoadTextureFromFile' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:38:21: warning: variable 'Aco_DX8_Texture_LockTexture' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   38 | HRESULT(__thiscall* Aco_DX8_Texture_LockTexture)(Aco_DX8_Texture* self, int level, D3DLOCKED_RECT& pLockedRect) = nullptr;
+      |                     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:38:21: warning: variable 'Aco_DX8_Texture_LockTexture' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:38:100: warning: invalid case style for parameter 'pLockedRect' [readability-identifier-naming]
+   38 | HRESULT(__thiscall* Aco_DX8_Texture_LockTexture)(Aco_DX8_Texture* self, int level, D3DLOCKED_RECT& pLockedRect) = nullptr;
+      |                                                                                                    ^~~~~~~~~~~
+      |                                                                                                    p_locked_rect
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:38:100: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:39:18: warning: variable 'Aco_DX8_Texture_UnlockTexture' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   39 | void(__thiscall* Aco_DX8_Texture_UnlockTexture)(Aco_DX8_Texture* self, int level) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:39:18: warning: variable 'Aco_DX8_Texture_UnlockTexture' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:40:17: warning: variable 'Aco_DX8_Texture_GetMipMapLevels' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   40 | int(__thiscall* Aco_DX8_Texture_GetMipMapLevels)(Aco_DX8_Texture* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:40:17: warning: variable 'Aco_DX8_Texture_GetMipMapLevels' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:41:29: warning: variable 'Aco_DX8_Texture_GetTextureDescription' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   41 | D3DSURFACE_DESC(__thiscall* Aco_DX8_Texture_GetTextureDescription)(Aco_DX8_Texture* self, int lvl) = nullptr;
+      |                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:41:29: warning: variable 'Aco_DX8_Texture_GetTextureDescription' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:43:26: warning: variable 'Aco_DX8_MaterialChannel_GetMaterial' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   43 | D3DMATERIAL9(__thiscall* Aco_DX8_MaterialChannel_GetMaterial)(void* self) = nullptr;
+      |                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:43:26: warning: variable 'Aco_DX8_MaterialChannel_GetMaterial' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:45:17: warning: variable 'Aco_DX8_ObjectDataChannel_GetVertexCount' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   45 | int(__thiscall* Aco_DX8_ObjectDataChannel_GetVertexCount)(Aco_DX8_ObjectDataChannel* self) = nullptr;
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:45:17: warning: variable 'Aco_DX8_ObjectDataChannel_GetVertexCount' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:46:25: warning: variable 'Aco_DX8_ObjectDataChannel_GetVertexPosition' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   46 | D3DXVECTOR3(__thiscall* Aco_DX8_ObjectDataChannel_GetVertexPosition)(Aco_DX8_ObjectDataChannel* self, DWORD nr) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:46:25: warning: variable 'Aco_DX8_ObjectDataChannel_GetVertexPosition' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:48:25: warning: variable 'Aco_DX8_ObjectChannel_GetPosition' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   48 | D3DXVECTOR3(__thiscall* Aco_DX8_ObjectChannel_GetPosition)(void* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:48:25: warning: variable 'Aco_DX8_ObjectChannel_GetPosition' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:50:19: warning: variable 'Aco_FloatChannel_GetFloat' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   50 | float(__thiscall* Aco_FloatChannel_GetFloat)(void* self) = nullptr;
+      |                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:50:19: warning: variable 'Aco_FloatChannel_GetFloat' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:51:19: warning: variable 'Aco_FloatChannel_GetDefaultFloat' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   51 | float(__thiscall* Aco_FloatChannel_GetDefaultFloat)(void* self) = nullptr;
+      |                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:51:19: warning: variable 'Aco_FloatChannel_GetDefaultFloat' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:52:18: warning: variable 'Aco_FloatChannel_SetFloat' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   52 | void(__thiscall* Aco_FloatChannel_SetFloat)(void* self, float value) = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:52:18: warning: variable 'Aco_FloatChannel_SetFloat' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:54:25: warning: variable 'Aco_VectorChannel_GetVector' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   54 | D3DXVECTOR3(__thiscall* Aco_VectorChannel_GetVector)(void* self) = nullptr;
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\api.cpp:54:25: warning: variable 'Aco_VectorChannel_GetVector' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\state.cpp:7:18: warning: variable 'g_engine' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+    7 | EngineInterface* g_engine = nullptr;
+      |                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\state.cpp:7:18: warning: variable 'g_engine' provides global access to a non-const object; consider making the pointed-to data 'const' [cppcoreguidelines-avoid-non-const-global-variables]
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\quest3d\state.cpp:8:6: warning: variable 'g_gameHandle' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+    8 | HWND g_gameHandle = nullptr;
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:19:20: warning: initialization of 'saveGroupFileDialog' with static storage duration may throw an exception that cannot be caught [bugprone-throwing-static-initialization]
+   19 | ImGui::FileBrowser saveGroupFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\third_party\kiero\..\imgui/imfilebrowser.h:169:28: note: possibly throwing constructor declared here
+  169 | inline ImGui::FileBrowser::FileBrowser(ImGuiFileBrowserFlags flags)
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:19:20: warning: invalid case style for variable 'saveGroupFileDialog' [readability-identifier-naming]
+   19 | ImGui::FileBrowser saveGroupFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^~~~~~~~~~~~~~~~~~~
+      |                    save_group_file_dialog
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:19:20: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:39:5: note: FIX-IT applied suggested code changes
+   39 |     saveGroupFileDialog.SetTitle("Save channel group");
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:40:5: note: FIX-IT applied suggested code changes
+   40 |     saveGroupFileDialog.SetTypeFilters({ ".cgr" });
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:86:21: note: FIX-IT applied suggested code changes
+   86 |                     saveGroupFileDialog.Open();
+      |                     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:218:5: note: FIX-IT applied suggested code changes
+  218 |     saveGroupFileDialog.Display();
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:224:8: note: FIX-IT applied suggested code changes
+  224 |     if(saveGroupFileDialog.HasSelected()) {
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:225:46: note: FIX-IT applied suggested code changes
+  225 |         ChannelGroup_SaveChannelGroup(group, saveGroupFileDialog.GetSelected().string().c_str());
+      |                                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:226:9: note: FIX-IT applied suggested code changes
+  226 |         saveGroupFileDialog.ClearSelected();
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:19:20: warning: variable 'saveGroupFileDialog' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   19 | ImGui::FileBrowser saveGroupFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:20:20: warning: initialization of 'saveTextureFileDialog' with static storage duration may throw an exception that cannot be caught [bugprone-throwing-static-initialization]
+   20 | ImGui::FileBrowser saveTextureFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\third_party\kiero\..\imgui/imfilebrowser.h:169:28: note: possibly throwing constructor declared here
+  169 | inline ImGui::FileBrowser::FileBrowser(ImGuiFileBrowserFlags flags)
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:20:20: warning: invalid case style for variable 'saveTextureFileDialog' [readability-identifier-naming]
+   20 | ImGui::FileBrowser saveTextureFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+      |                    save_texture_file_dialog
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:20:20: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:45:5: note: FIX-IT applied suggested code changes
+   45 |     saveTextureFileDialog.SetTitle("Save texture");
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:46:5: note: FIX-IT applied suggested code changes
+   46 |     saveTextureFileDialog.SetTypeFilters({ ".tga", ".png", ".jpg" });
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:160:29: note: FIX-IT applied suggested code changes
+  160 |                             saveTextureFileDialog.Open();
+      |                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:220:5: note: FIX-IT applied suggested code changes
+  220 |     saveTextureFileDialog.Display();
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:235:8: note: FIX-IT applied suggested code changes
+  235 |     if(saveTextureFileDialog.HasSelected()) {
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:236:34: note: FIX-IT applied suggested code changes
+  236 |         std::ofstream binaryFile(saveTextureFileDialog.GetSelected().string().c_str(), std::ios::out | std::ios::binary);
+      |                                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:20:20: warning: variable 'saveTextureFileDialog' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   20 | ImGui::FileBrowser saveTextureFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:21:20: warning: initialization of 'saveGraphFileDialog' with static storage duration may throw an exception that cannot be caught [bugprone-throwing-static-initialization]
+   21 | ImGui::FileBrowser saveGraphFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\third_party\kiero\..\imgui/imfilebrowser.h:169:28: note: possibly throwing constructor declared here
+  169 | inline ImGui::FileBrowser::FileBrowser(ImGuiFileBrowserFlags flags)
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:21:20: warning: invalid case style for variable 'saveGraphFileDialog' [readability-identifier-naming]
+   21 | ImGui::FileBrowser saveGraphFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^~~~~~~~~~~~~~~~~~~
+      |                    save_graph_file_dialog
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:21:20: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:51:5: note: FIX-IT applied suggested code changes
+   51 |     saveGraphFileDialog.SetTitle("Save DOT Digraph");
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:52:5: note: FIX-IT applied suggested code changes
+   52 |     saveGraphFileDialog.SetTypeFilters({ ".gv" });
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:107:25: note: FIX-IT applied suggested code changes
+  107 |                         saveGraphFileDialog.Open();
+      |                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:222:5: note: FIX-IT applied suggested code changes
+  222 |     saveGraphFileDialog.Display();
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:261:8: note: FIX-IT applied suggested code changes
+  261 |     if(saveGraphFileDialog.HasSelected()) {
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:265:28: note: FIX-IT applied suggested code changes
+  265 |         std::ofstream file(saveGraphFileDialog.GetSelected().string().c_str(), std::ofstream::trunc);
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:270:9: note: FIX-IT applied suggested code changes
+  270 |         saveGraphFileDialog.ClearSelected();
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:21:20: warning: variable 'saveGraphFileDialog' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   21 | ImGui::FileBrowser saveGraphFileDialog(ImGuiFileBrowserFlags_EnterNewFilename | ImGuiFileBrowserFlags_CreateNewDir);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:22:20: warning: initialization of 'loadGroupFileDialog' with static storage duration may throw an exception that cannot be caught [bugprone-throwing-static-initialization]
+   22 | ImGui::FileBrowser loadGroupFileDialog(0);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\third_party\kiero\..\imgui/imfilebrowser.h:169:28: note: possibly throwing constructor declared here
+  169 | inline ImGui::FileBrowser::FileBrowser(ImGuiFileBrowserFlags flags)
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:22:20: warning: invalid case style for variable 'loadGroupFileDialog' [readability-identifier-naming]
+   22 | ImGui::FileBrowser loadGroupFileDialog(0);
+      |                    ^~~~~~~~~~~~~~~~~~~
+      |                    load_group_file_dialog
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:22:20: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:42:5: note: FIX-IT applied suggested code changes
+   42 |     loadGroupFileDialog.SetTitle("Load channel group");
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:43:5: note: FIX-IT applied suggested code changes
+   43 |     loadGroupFileDialog.SetTypeFilters({ ".cgr" });
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:69:17: note: FIX-IT applied suggested code changes
+   69 |                 loadGroupFileDialog.Open();
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:219:5: note: FIX-IT applied suggested code changes
+  219 |     loadGroupFileDialog.Display();
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:228:8: note: FIX-IT applied suggested code changes
+  228 |     if(loadGroupFileDialog.HasSelected()) {
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:229:74: note: FIX-IT applied suggested code changes
+  229 |         A3d_ChannelGroup* newGroup = quest3d::g_engine->LoadChannelGroup(loadGroupFileDialog.GetSelected().string().c_str(), newGroupName);
+      |                                                                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:233:9: note: FIX-IT applied suggested code changes
+  233 |         loadGroupFileDialog.ClearSelected();
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:243:9: note: FIX-IT applied suggested code changes
+  243 |         loadGroupFileDialog.ClearSelected();
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:259:9: note: FIX-IT applied suggested code changes
+  259 |         loadGroupFileDialog.ClearSelected();
+      |         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:22:20: warning: variable 'loadGroupFileDialog' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   22 | ImGui::FileBrowser loadGroupFileDialog(0);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:23:20: warning: initialization of 'loadTextureFileDialog' with static storage duration may throw an exception that cannot be caught [bugprone-throwing-static-initialization]
+   23 | ImGui::FileBrowser loadTextureFileDialog(0);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\third_party\kiero\..\imgui/imfilebrowser.h:169:28: note: possibly throwing constructor declared here
+  169 | inline ImGui::FileBrowser::FileBrowser(ImGuiFileBrowserFlags flags)
+      |                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:23:20: warning: invalid case style for variable 'loadTextureFileDialog' [readability-identifier-naming]
+   23 | ImGui::FileBrowser loadTextureFileDialog(0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+      |                    load_texture_file_dialog
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:23:20: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:48:5: note: FIX-IT applied suggested code changes
+   48 |     loadTextureFileDialog.SetTitle("Load texture");
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:49:5: note: FIX-IT applied suggested code changes
+   49 |     loadTextureFileDialog.SetTypeFilters({ ".tga", ".png", ".jpg" });
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:163:29: note: FIX-IT applied suggested code changes
+  163 |                             loadTextureFileDialog.Open();
+      |                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:221:5: note: FIX-IT applied suggested code changes
+  221 |     loadTextureFileDialog.Display();
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:245:8: note: FIX-IT applied suggested code changes
+  245 |     if(loadTextureFileDialog.HasSelected()) {
+      |        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:255:65: note: FIX-IT applied suggested code changes
+  255 |             Aco_DX8_Texture_LoadTextureFromFile(texture, (char*)loadTextureFileDialog.GetSelected().string().c_str());
+      |                                                                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:23:20: warning: variable 'loadTextureFileDialog' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   23 | ImGui::FileBrowser loadTextureFileDialog(0);
+      |                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:25:5: warning: invalid case style for variable 'channelGroupToUse' [readability-identifier-naming]
+   25 | int channelGroupToUse = 0;
+      |     ^~~~~~~~~~~~~~~~~
+      |     channel_group_to_use
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:25:5: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:73:57: note: FIX-IT applied suggested code changes
+   73 |             ImGui::InputInt("A3d_ChannelGroup to use", &channelGroupToUse, 1, 10);
+      |                                                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:76:56: note: FIX-IT applied suggested code changes
+   76 |             group = quest3d::g_engine->GetChannelGroup(channelGroupToUse);
+      |                                                        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:25:5: warning: variable 'channelGroupToUse' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   25 | int channelGroupToUse = 0;
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:26:5: warning: invalid case style for variable 'channelInGroupToUse' [readability-identifier-naming]
+   26 | int channelInGroupToUse = 1;
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     channel_in_group_to_use
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:26:5: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:91:61: note: FIX-IT applied suggested code changes
+   91 |                 ImGui::InputInt("Channel in group to get", &channelInGroupToUse, 1, 10);
+      |                                                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:92:58: note: FIX-IT applied suggested code changes
+   92 |                 channel = ChannelGroup_GetChannel(group, channelInGroupToUse);
+      |                                                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:26:5: warning: variable 'channelInGroupToUse' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   26 | int channelInGroupToUse = 1;
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:27:5: warning: invalid case style for variable 'mipmapLevelToUse' [readability-identifier-naming]
+   27 | int mipmapLevelToUse = 0;
+      |     ^~~~~~~~~~~~~~~~
+      |     mipmap_level_to_use
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:27:5: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:147:65: note: FIX-IT applied suggested code changes
+  147 |                         ImGui::InputInt("Select Mipmap level", &mipmapLevelToUse, 1, 10);
+      |                                                                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:154:106: note: FIX-IT applied suggested code changes
+  154 |                             D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmapLevelToUse);
+      |                                                                                                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:249:90: note: FIX-IT applied suggested code changes
+  249 |             D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmapLevelToUse);
+      |                                                                                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:254:50: note: FIX-IT applied suggested code changes
+  254 |             Aco_DX8_Texture_LockTexture(texture, mipmapLevelToUse, lockedRect);
+      |                                                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:256:52: note: FIX-IT applied suggested code changes
+  256 |             Aco_DX8_Texture_UnlockTexture(texture, mipmapLevelToUse);
+      |                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:27:5: warning: variable 'mipmapLevelToUse' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   27 | int mipmapLevelToUse = 0;
+      |     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:28:6: warning: invalid case style for variable 'newGroupName' [readability-identifier-naming]
+   28 | char newGroupName[128] = "New Group";
+      |      ^~~~~~~~~~~~
+      |      new_group_name
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:28:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:67:57: note: FIX-IT applied suggested code changes
+   67 |             ImGui::InputText("Pool name for new group", newGroupName, IM_ARRAYSIZE(newGroupName));
+      |                                                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:67:84: note: FIX-IT applied suggested code changes
+   67 |             ImGui::InputText("Pool name for new group", newGroupName, IM_ARRAYSIZE(newGroupName));
+      |                                                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:229:126: note: FIX-IT applied suggested code changes
+  229 |         A3d_ChannelGroup* newGroup = quest3d::g_engine->LoadChannelGroup(loadGroupFileDialog.GetSelected().string().c_str(), newGroupName);
+      |                                                                                                                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:28:6: warning: variable 'newGroupName' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   28 | char newGroupName[128] = "New Group";
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:29:6: warning: invalid case style for variable 'newText' [readability-identifier-naming]
+   29 | char newText[1024] = "New Text";
+      |      ^~~~~~~
+      |      new_text
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:29:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:120:61: note: FIX-IT applied suggested code changes
+  120 |                         ImGui::InputText("New text to set", newText, IM_ARRAYSIZE(newText));
+      |                                                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:120:83: note: FIX-IT applied suggested code changes
+  120 |                         ImGui::InputText("New text to set", newText, IM_ARRAYSIZE(newText));
+      |                                                                                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:122:82: note: FIX-IT applied suggested code changes
+  122 |                             StringChannel_SetString((Aco_StringChannel*)channel, newText);
+      |                                                                                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:29:6: warning: variable 'newText' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   29 | char newText[1024] = "New Text";
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:30:6: warning: invalid case style for variable 'textureLocked' [readability-identifier-naming]
+   30 | bool textureLocked = false;
+      |      ^~~~~~~~~~~~~
+      |      texture_locked
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:30:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:152:29: note: FIX-IT applied suggested code changes
+  152 |                         if(!textureLocked && previewTexture) {
+      |                             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:247:13: note: FIX-IT applied suggested code changes
+  247 |             textureLocked = true;
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:257:13: note: FIX-IT applied suggested code changes
+  257 |             textureLocked = false;
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:30:6: warning: variable 'textureLocked' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   30 | bool textureLocked = false;
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:31:6: warning: invalid case style for variable 'previewTexture' [readability-identifier-naming]
+   31 | bool previewTexture = true;
+      |      ^~~~~~~~~~~~~~
+      |      preview_texture
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:31:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:148:60: note: FIX-IT applied suggested code changes
+  148 |                         ImGui::Checkbox("Enable preview", &previewTexture);
+      |                                                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:152:46: note: FIX-IT applied suggested code changes
+  152 |                         if(!textureLocked && previewTexture) {
+      |                                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:31:6: warning: variable 'previewTexture' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   31 | bool previewTexture = true;
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:32:7: warning: invalid case style for variable 'newFloat' [readability-identifier-naming]
+   32 | float newFloat = 0;
+      |       ^~~~~~~~
+      |       new_float
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:32:7: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:194:57: note: FIX-IT applied suggested code changes
+  194 |                         ImGui::InputFloat("New float", &newFloat);
+      |                                                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:196:64: note: FIX-IT applied suggested code changes
+  196 |                             Aco_FloatChannel_SetFloat(channel, newFloat);
+      |                                                                ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:32:7: warning: variable 'newFloat' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   32 | float newFloat = 0;
+      |       ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:33:6: warning: invalid case style for variable 'newScript' [readability-identifier-naming]
+   33 | char newScript[20000] = "-- Script here!";
+      |      ^~~~~~~~~
+      |      new_script
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:33:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:138:65: note: FIX-IT applied suggested code changes
+  138 |                         ImGui::InputTextMultiline("New script", newScript, IM_ARRAYSIZE(newScript));
+      |                                                                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:138:89: note: FIX-IT applied suggested code changes
+  138 |                         ImGui::InputTextMultiline("New script", newScript, IM_ARRAYSIZE(newScript));
+      |                                                                                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:140:52: note: FIX-IT applied suggested code changes
+  140 |                             Lua_SetScript(channel, newScript);
+      |                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:33:6: warning: variable 'newScript' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+   33 | char newScript[20000] = "-- Script here!";
+      |      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:59:17: warning: invalid case style for variable 'channelGUID' [readability-identifier-naming]
+   59 |     std::string channelGUID;
+      |                 ^~~~~~~~~~~
+      |                 channel_guid
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:59:17: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:102:21: note: FIX-IT applied suggested code changes
+  102 |                     channelGUID = stdstringGUID;
+      |                     ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:246:19: note: FIX-IT applied suggested code changes
+  246 |         if(strstr(channelGUID.c_str(), "BC052C38-2D5D")) {
+      |                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:79:29: warning: format string is not a string literal (potentially insecure) [clang-diagnostic-format-security]
+   79 |                 ImGui::Text(ChannelGroup_GetPoolName(group));
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:79:29: note: treat the string as an argument to avoid this
+   79 |                 ImGui::Text(ChannelGroup_GetPoolName(group));
+      |                             ^
+      |                             "%s", 
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:80:29: warning: format string is not a string literal (potentially insecure) [clang-diagnostic-format-security]
+   80 |                 ImGui::Text(ChannelGroup_GetChannelGroupFileName(group));
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:80:29: note: treat the string as an argument to avoid this
+   80 |                 ImGui::Text(ChannelGroup_GetChannelGroupFileName(group));
+      |                             ^
+      |                             "%s", 
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:94:33: warning: format string is not a string literal (potentially insecure) [clang-diagnostic-format-security]
+   94 |                     ImGui::Text(Channel_GetChannelName(channel));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:94:33: note: treat the string as an argument to avoid this
+   94 |                     ImGui::Text(Channel_GetChannelName(channel));
+      |                                 ^
+      |                                 "%s", 
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:96:33: warning: format string is not a string literal (potentially insecure) [clang-diagnostic-format-security]
+   96 |                     ImGui::Text(channel->GetChannelType().name);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:96:33: note: treat the string as an argument to avoid this
+   96 |                     ImGui::Text(channel->GetChannelType().name);
+      |                                 ^
+      |                                 "%s", 
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:98:30: warning: invalid case style for variable 'guidString' [readability-identifier-naming]
+   98 |                     OLECHAR* guidString;
+      |                              ^~~~~~~~~~
+      |                              guid_string
+   99 |                     StringFromCLSID(channel->GetChannelType().guid, &guidString);
+      |                                                                      ~~~~~~~~~~
+      |                                                                      guid_string
+  100 |                     std::wstring wstring = std::wstring(guidString);
+      |                                                         ~~~~~~~~~~
+      |                                                         guid_string
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:98:30: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:99:70: note: FIX-IT applied suggested code changes
+   99 |                     StringFromCLSID(channel->GetChannelType().guid, &guidString);
+      |                                                                      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:100:57: note: FIX-IT applied suggested code changes
+  100 |                     std::wstring wstring = std::wstring(guidString);
+      |                                                         ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:101:33: warning: invalid case style for variable 'stdstringGUID' [readability-identifier-naming]
+  101 |                     std::string stdstringGUID = util::Utf8Encode(wstring);
+      |                                 ^~~~~~~~~~~~~
+      |                                 stdstring_guid
+  102 |                     channelGUID = stdstringGUID;
+      |                                   ~~~~~~~~~~~~~
+      |                                   stdstring_guid
+  103 | 
+  104 |                     ImGui::Text(stdstringGUID.c_str());
+      |                                 ~~~~~~~~~~~~~
+      |                                 stdstring_guid
+  105 | 
+  106 |                     if(ImGui::Button("Save as DOT Digraph")) {
+  107 |                         saveGraphFileDialog.Open();
+  108 |                     }
+  109 | 
+  110 |                     if(strstr(stdstringGUID.c_str(), "6E6FB247-4627")) {
+      |                               ~~~~~~~~~~~~~
+      |                               stdstring_guid
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:101:33: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:102:35: note: FIX-IT applied suggested code changes
+  102 |                     channelGUID = stdstringGUID;
+      |                                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:104:33: note: FIX-IT applied suggested code changes
+  104 |                     ImGui::Text(stdstringGUID.c_str());
+      |                                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:110:31: note: FIX-IT applied suggested code changes
+  110 |                     if(strstr(stdstringGUID.c_str(), "6E6FB247-4627")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:126:31: note: FIX-IT applied suggested code changes
+  126 |                     if(strstr(stdstringGUID.c_str(), "F26BB40B-B196")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:130:31: note: FIX-IT applied suggested code changes
+  130 |                     if(strstr(stdstringGUID.c_str(), "6514FE12-88CF")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:144:31: note: FIX-IT applied suggested code changes
+  144 |                     if(strstr(stdstringGUID.c_str(), "BC052C38-2D5D")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:167:31: note: FIX-IT applied suggested code changes
+  167 |                     if(strstr(stdstringGUID.c_str(), "376A9C13-8D66")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:181:31: note: FIX-IT applied suggested code changes
+  181 |                     if(strstr(stdstringGUID.c_str(), "21A8923D-B908")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:186:31: note: FIX-IT applied suggested code changes
+  186 |                     if(strstr(stdstringGUID.c_str(), "10C20C0A-7A55")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:191:31: note: FIX-IT applied suggested code changes
+  191 |                     if(strstr(stdstringGUID.c_str(), "BE69CCC4-CFC1")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:200:31: note: FIX-IT applied suggested code changes
+  200 |                     if(strstr(stdstringGUID.c_str(), "9D045960-EAC2")) {
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:104:33: warning: format string is not a string literal (potentially insecure) [clang-diagnostic-format-security]
+  104 |                     ImGui::Text(stdstringGUID.c_str());
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:104:33: note: treat the string as an argument to avoid this
+  104 |                     ImGui::Text(stdstringGUID.c_str());
+      |                                 ^
+      |                                 "%s", 
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:111:44: warning: invalid case style for variable 'stringChannel' [readability-identifier-naming]
+  111 |                         Aco_StringChannel* stringChannel(reinterpret_cast<Aco_StringChannel*>(channel));
+      |                                            ^~~~~~~~~~~~~
+      |                                            string_channel
+  112 | 
+  113 |                         ImGui::Text("Text in channel: %s", StringChannel_GetString(stringChannel));
+      |                                                                                    ~~~~~~~~~~~~~
+      |                                                                                    string_channel
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:111:44: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:113:84: note: FIX-IT applied suggested code changes
+  113 |                         ImGui::Text("Text in channel: %s", StringChannel_GetString(stringChannel));
+      |                                                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:153:48: warning: invalid case style for variable 'd3dTexture' [readability-identifier-naming]
+  153 |                             IDirect3DTexture9* d3dTexture = Aco_DX8_Texture_GetTexture(texture);
+      |                                                ^~~~~~~~~~
+      |                                                d3d_texture
+  154 |                             D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmapLevelToUse);
+  155 |                             ImGui::Text("Texture size: %dx%d", description.Width, description.Height);
+  156 |                             ImGui::Image((void*)d3dTexture, ImVec2(description.Width, description.Height));
+      |                                                 ~~~~~~~~~~
+      |                                                 d3d_texture
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:153:48: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:156:49: note: FIX-IT applied suggested code changes
+  156 |                             ImGui::Image((void*)d3dTexture, ImVec2(description.Width, description.Height));
+      |                                                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:156:68: warning: narrowing conversion from 'UINT' (aka 'unsigned int') to 'float' [bugprone-narrowing-conversions]
+  156 |                             ImGui::Image((void*)d3dTexture, ImVec2(description.Width, description.Height));
+      |                                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:156:87: warning: narrowing conversion from 'UINT' (aka 'unsigned int') to 'float' [bugprone-narrowing-conversions]
+  156 |                             ImGui::Image((void*)d3dTexture, ImVec2(description.Width, description.Height));
+      |                                                                                       ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:182:52: warning: invalid case style for variable 'objectData' [readability-identifier-naming]
+  182 |                         Aco_DX8_ObjectDataChannel* objectData = (Aco_DX8_ObjectDataChannel*)channel;
+      |                                                    ^~~~~~~~~~
+      |                                                    object_data
+  183 |                         ImGui::Text("Vertex count: %d", Aco_DX8_ObjectDataChannel_GetVertexCount(objectData));
+      |                                                                                                  ~~~~~~~~~~
+      |                                                                                                  object_data
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:182:52: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:183:98: note: FIX-IT applied suggested code changes
+  183 |                         ImGui::Text("Vertex count: %d", Aco_DX8_ObjectDataChannel_GetVertexCount(objectData));
+      |                                                                                                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:229:27: warning: invalid case style for variable 'newGroup' [readability-identifier-naming]
+  229 |         A3d_ChannelGroup* newGroup = quest3d::g_engine->LoadChannelGroup(loadGroupFileDialog.GetSelected().string().c_str(), newGroupName);
+      |                           ^~~~~~~~
+      |                           new_group
+  230 |         if(newGroup != nullptr) {
+      |            ~~~~~~~~
+      |            new_group
+  231 |             ChannelGroup_CallStartChannel(newGroup);
+      |                                           ~~~~~~~~
+      |                                           new_group
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:229:27: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:230:12: note: FIX-IT applied suggested code changes
+  230 |         if(newGroup != nullptr) {
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:231:43: note: FIX-IT applied suggested code changes
+  231 |             ChannelGroup_CallStartChannel(newGroup);
+      |                                           ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:236:23: warning: invalid case style for variable 'binaryFile' [readability-identifier-naming]
+  236 |         std::ofstream binaryFile(saveTextureFileDialog.GetSelected().string().c_str(), std::ios::out | std::ios::binary);
+      |                       ^~~~~~~~~~
+      |                       binary_file
+  237 |         if(binaryFile.is_open()) {
+      |            ~~~~~~~~~~
+      |            binary_file
+  238 |             Aco_DX8_Texture* texture = (Aco_DX8_Texture*)channel;
+  239 |             char* data = Aco_DX8_Texture_GetTextureBuffer(texture);
+  240 |             int size = Aco_DX8_Texture_GetBufferSize(texture);
+  241 |             binaryFile.write(data, size);
+      |             ~~~~~~~~~~
+      |             binary_file
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:236:23: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:237:12: note: FIX-IT applied suggested code changes
+  237 |         if(binaryFile.is_open()) {
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:241:13: note: FIX-IT applied suggested code changes
+  241 |             binaryFile.write(data, size);
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:250:28: warning: invalid case style for variable 'lockedRect' [readability-identifier-naming]
+  250 |             D3DLOCKED_RECT lockedRect;
+      |                            ^~~~~~~~~~
+      |                            locked_rect
+  251 |             lockedRect.pBits = (void*)Aco_DX8_Texture_GetTextureBuffer(texture);
+      |             ~~~~~~~~~~
+      |             locked_rect
+  252 |             lockedRect.Pitch = description.Width * 4;
+      |             ~~~~~~~~~~
+      |             locked_rect
+  253 | 
+  254 |             Aco_DX8_Texture_LockTexture(texture, mipmapLevelToUse, lockedRect);
+      |                                                                    ~~~~~~~~~~
+      |                                                                    locked_rect
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:250:28: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:251:13: note: FIX-IT applied suggested code changes
+  251 |             lockedRect.pBits = (void*)Aco_DX8_Texture_GetTextureBuffer(texture);
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:252:13: note: FIX-IT applied suggested code changes
+  252 |             lockedRect.Pitch = description.Width * 4;
+      |             ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:254:68: note: FIX-IT applied suggested code changes
+  254 |             Aco_DX8_Texture_LockTexture(texture, mipmapLevelToUse, lockedRect);
+      |                                                                    ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:252:32: warning: narrowing conversion from 'UINT' (aka 'unsigned int') to signed type 'INT' (aka 'int') is implementation-defined [bugprone-narrowing-conversions]
+  252 |             lockedRect.Pitch = description.Width * 4;
+      |                                ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:262:26: warning: invalid case style for variable 'channelGraph' [readability-identifier-naming]
+  262 |         UGraphviz::Graph channelGraph(ChannelGroup_GetPoolName(group), true);
+      |                          ^~~~~~~~~~~~
+      |                          channel_graph
+  263 |         graph::write_channel_graph(group, &channelGraph);
+      |                                          ~~~~~~~~~~~~
+      |                                          channel_graph
+  264 | 
+  265 |         std::ofstream file(saveGraphFileDialog.GetSelected().string().c_str(), std::ofstream::trunc);
+  266 |         std::string dotSource = channelGraph.Dump();
+      |                                 ~~~~~~~~~~~~
+      |                                 channel_graph
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:262:26: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:263:42: note: FIX-IT applied suggested code changes
+  263 |         graph::write_channel_graph(group, &channelGraph);
+      |                                          ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:266:33: note: FIX-IT applied suggested code changes
+  266 |         std::string dotSource = channelGraph.Dump();
+      |                                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:266:21: warning: invalid case style for variable 'dotSource' [readability-identifier-naming]
+  266 |         std::string dotSource = channelGraph.Dump();
+      |                     ^~~~~~~~~
+      |                     dot_source
+  267 |         file << dotSource.c_str();
+      |                 ~~~~~~~~~
+      |                 dot_source
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:266:21: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\ui\tamperer_window.cpp:267:17: note: FIX-IT applied suggested code changes
+  267 |         file << dotSource.c_str();
+      |                 ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/clipboard.h:6:22: error: unknown type name 'HWND' [clang-diagnostic-error]
+    6 | void CopyToClipboard(HWND hwnd, const std::string& s);
+      |                      ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/clipboard.h:6:39: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+    6 | void CopyToClipboard(HWND hwnd, const std::string& s);
+      |                                       ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:6:1: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+    6 | std::string Utf8Encode(const std::wstring& wstr);
+      | ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:6:30: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+    6 | std::string Utf8Encode(const std::wstring& wstr);
+      |                              ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:7:1: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+    7 | std::wstring Utf8Decode(const std::string& str);
+      | ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:7:31: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+    7 | std::wstring Utf8Decode(const std::string& str);
+      |                               ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:11:1: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+   11 | std::size_t ReplaceAll(std::string& inout, std::string_view what, std::string_view with);
+      | ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:11:24: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+   11 | std::size_t ReplaceAll(std::string& inout, std::string_view what, std::string_view with);
+      |                        ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:11:44: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+   11 | std::size_t ReplaceAll(std::string& inout, std::string_view what, std::string_view with);
+      |                                            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util/text_convert.h:11:67: error: use of undeclared identifier 'std' [clang-diagnostic-error]
+   11 | std::size_t ReplaceAll(std::string& inout, std::string_view what, std::string_view with);
+      |                                                                   ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\clipboard.cpp:7:6: warning: invalid case style for function 'CopyToClipboard' [readability-identifier-naming]
+    7 | void CopyToClipboard(HWND hwnd, const std::string& s)
+      |      ^~~~~~~~~~~~~~~
+      |      copy_to_clipboard
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\clipboard.cpp:7:6: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:7:13: warning: invalid case style for function 'Utf8Encode' [readability-identifier-naming]
+    7 | std::string Utf8Encode(const std::wstring& wstr)
+      |             ^~~~~~~~~~
+      |             utf8_encode
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:7:13: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:11:83: warning: use nullptr [modernize-use-nullptr]
+   11 |     int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+      |                                                                                   ^~~~
+      |                                                                                   nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:11:83: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:11:92: warning: use nullptr [modernize-use-nullptr]
+   11 |     int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+      |                                                                                            ^~~~
+      |                                                                                            nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:11:92: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:11:98: warning: use nullptr [modernize-use-nullptr]
+   11 |     int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+      |                                                                                                  ^~~~
+      |                                                                                                  nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:11:98: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:12:17: warning: invalid case style for variable 'strTo' [readability-identifier-naming]
+   12 |     std::string strTo(size_needed, 0);
+      |                 ^~~~~
+      |                 str_to
+   13 |     WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+      |                                                                  ~~~~~
+      |                                                                  str_to
+   14 |     return strTo;
+      |            ~~~~~
+      |            str_to
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:12:17: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:13:66: note: FIX-IT applied suggested code changes
+   13 |     WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+      |                                                                  ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:14:12: note: FIX-IT applied suggested code changes
+   14 |     return strTo;
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:13:89: warning: use nullptr [modernize-use-nullptr]
+   13 |     WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+      |                                                                                         ^~~~
+      |                                                                                         nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:13:89: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:13:95: warning: use nullptr [modernize-use-nullptr]
+   13 |     WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+      |                                                                                               ^~~~
+      |                                                                                               nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:13:95: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:17:14: warning: invalid case style for function 'Utf8Decode' [readability-identifier-naming]
+   17 | std::wstring Utf8Decode(const std::string& str)
+      |              ^~~~~~~~~~
+      |              utf8_decode
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:17:14: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:21:81: warning: use nullptr [modernize-use-nullptr]
+   21 |     int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
+      |                                                                                 ^~~~
+      |                                                                                 nullptr
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:21:81: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:22:18: warning: invalid case style for variable 'wstrTo' [readability-identifier-naming]
+   22 |     std::wstring wstrTo(size_needed, 0);
+      |                  ^~~~~~
+      |                  wstr_to
+   23 |     MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
+      |                                                                ~~~~~~
+      |                                                                wstr_to
+   24 |     return wstrTo;
+      |            ~~~~~~
+      |            wstr_to
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:22:18: note: FIX-IT applied suggested code changes
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:23:64: note: FIX-IT applied suggested code changes
+   23 |     MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
+      |                                                                ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:24:12: note: FIX-IT applied suggested code changes
+   24 |     return wstrTo;
+      |            ^
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:27:13: warning: invalid case style for function 'ReplaceAll' [readability-identifier-naming]
+   27 | std::size_t ReplaceAll(std::string& inout, std::string_view what, std::string_view with)
+      |             ^~~~~~~~~~
+      |             replace_all
+C:\Users\Unchp\source\repos\Quest3DTamperer\Quest3DTamperer\src\util\text_convert.cpp:27:13: note: FIX-IT applied suggested code changes
+clang-tidy applied 224 of 224 suggested fixes.

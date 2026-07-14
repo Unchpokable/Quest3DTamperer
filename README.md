@@ -1,5 +1,7 @@
 >[!IMPORTANT]
-> This repo does not seem to work anymore. Please be aware of this. The code is really bad, as this was my first time using C++ in a proper project.
+> The build was recently overhauled (monolithic source split up, MSBuild replaced with CMake + Ninja, missing
+> dependencies vendored - see "Building" below). It compiles and links cleanly again, but the actual in-game hooking
+> behavior hasn't been re-verified against a running copy of Audiosurf.
 >
 > As of now, I am not actively working on this. Instead, I'm working on other projects under this organization.
 >
@@ -30,9 +32,28 @@ This tool is not supposed to:
 More to come soon-ish.
 
 # Dependencies
-- The Quest3D 4.0 SDK (4.2 might work too)
-- [UGraphViz](https://github.com/Ubpa/UGraphviz)
-- [kiero](https://github.com/Rebzzel/kiero)
-- [Dear ImGui](https://github.com/ocornut/imgui)
-- [Graphviz](https://gitlab.com/graphviz/graphviz/)
-- [Detours](https://github.com/microsoft/Detours)
+- The Quest3D 4.0 SDK (4.2 might work too) - proprietary, **not included in this repo**, see "Building" below
+- [UGraphViz](https://github.com/Ubpa/UGraphviz) - vendored in `Quest3DTamperer/third_party/UGraphviz`
+- [kiero](https://github.com/Rebzzel/kiero) - vendored in `Quest3DTamperer/third_party/kiero`
+- [Dear ImGui](https://github.com/ocornut/imgui) - vendored in `Quest3DTamperer/third_party/imgui`
+- [Detours](https://github.com/microsoft/Detours) - vendored in `Detours/`, built from source
+- [MinHook](https://github.com/TsudaKageyu/minhook) - vendored in `MinHook/`, built from source (kiero's hooking backend)
+- The [DirectX SDK, June 2010](https://www.microsoft.com/en-us/download/details.aspx?id=6812) - vendored in
+  `DirectX-SDK-June2010/`, headers only (needed for `d3dx9.h`/`d3dx9math.h`, which the Windows SDK no longer ships;
+  nothing in this project calls an actual D3DX9 function, so none of its import libraries are linked)
+
+Graphviz itself is **not** a dependency, despite UGraphViz's name - it only generates DOT source as plain strings.
+
+# Building
+Requires Visual Studio 2022+ (for the MSVC toolset), CMake 3.21+, and Ninja (ships with Visual Studio). This project
+targets x86/Win32 only - Audiosurf is a 32-bit process, so a 64-bit build of this DLL could never be injected into it.
+
+1. Get a copy of the Quest3D SDK yourself (see the disclaimer above) and either drop it at
+   `Quest3DTamperer/q3d SDK/` or point `Q3D_SDK_DIR` at wherever you put it.
+2. From an **x86 Native Tools Command Prompt for VS**, in the repo root:
+   ```
+   cmake --preset x86-release -DQ3D_SDK_DIR="C:/path/to/q3d SDK"
+   cmake --build --preset x86-release
+   ```
+   (Omit `-DQ3D_SDK_DIR` if you used the default `Quest3DTamperer/q3d SDK/` location.) The resulting
+   `Quest3DTamperer.dll` ends up in `build/x86-release/bin/`. An `x86-debug` preset is also available.
