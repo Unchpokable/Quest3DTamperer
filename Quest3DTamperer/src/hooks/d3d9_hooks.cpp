@@ -6,8 +6,6 @@
 
 #include "ui/tamperer_window.h"
 
-#include <wrl/client.h>
-
 // imgui_impl_win32.h intentionally omits this declaration (to avoid forcing
 // <windows.h> on every consumer) and asks callers to copy it in manually.
 // NOTE: must keep this exact name - it's the real symbol imgui exports, not
@@ -161,6 +159,7 @@ void install_d3d9_hooks()
         o_end_scene = nullptr;
     }
 
+    // todo: we already have a handle to this DLL, just search for parent process' TopLevelWindow.
     quest3d::g_game_handle = FindWindow(nullptr, L"Audiosurf");
     if(quest3d::g_game_handle == nullptr) {
         return;
