@@ -5,7 +5,7 @@
 // Quest3D engine entry points. highpoly.dll (and the per-channel-type DLLs,
 // named after the channel's GUID) never ship import libraries usable from
 // here, so every one of these is resolved at runtime by mangled name via
-// Detours' DetourFindFunction. ResolveApi() must run once, early, before any
+// Detours' DetourFindFunction. resolve_api() must run once, early, before any
 // of these pointers are dereferenced.
 namespace quest3d::api
 {
@@ -60,6 +60,6 @@ extern D3DXVECTOR3(__thiscall* Aco_VectorChannel_GetVector)(void* self);
 
 // Resolves every pointer above via DetourFindFunction. Must be called once
 // before the UI or the graph dumper touch any of them.
-void ResolveApi();
+void resolve_api();
 
 } // namespace quest3d::api

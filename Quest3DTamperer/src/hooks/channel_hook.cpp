@@ -4,32 +4,28 @@
 
 #include "quest3d/state.h"
 
-namespace hooks
-{
-
 namespace
 {
+void(__thiscall* true_call_channel)(A3d_Channel* self) = nullptr;
 
-void(__thiscall* TrueCallChannel)(A3d_Channel* self) = nullptr;
-
-void __fastcall CallChannelHook(A3d_Channel* self, DWORD /*edx*/)
+void __fastcall call_channel_hook(A3d_Channel* self, DWORD /*edx*/)
 {
-    TrueCallChannel(self);
+    true_call_channel(self);
     if(quest3d::g_engine == nullptr) {
         quest3d::g_engine = self->engine;
     }
 }
-
 } // namespace
 
-void InstallChannelHook()
+namespace hooks
 {
-    TrueCallChannel = (void(__thiscall*)(A3d_Channel*))DetourFindFunction("highpoly.dll", "?CallChannel@A3d_Channel@@UAEXXZ");
+void install_channel_hook()
+{
+    true_call_channel = (void(__thiscall*)(A3d_Channel*))DetourFindFunction("highpoly.dll", "?CallChannel@A3d_Channel@@UAEXXZ");
 
     DetourTransactionBegin();
     DetourUpdateThread(GetCurrentThread());
-    DetourAttach(&(PVOID&)TrueCallChannel, CallChannelHook);
+    DetourAttach(&(PVOID&)true_call_channel, &call_channel_hook);
     DetourTransactionCommit();
 }
-
 } // namespace hooks

@@ -24,15 +24,15 @@ ImGui::FileBrowser save_graph_file_dialog(ImGuiFileBrowserFlags_EnterNewFilename
 ImGui::FileBrowser load_group_file_dialog(0);
 ImGui::FileBrowser load_texture_file_dialog(0);
 
-int channelGroupToUse = 0;
-int channelInGroupToUse = 1;
-int mipmapLevelToUse = 0;
-char newGroupName[128] = "New Group";
-char newText[1024] = "New Text";
-bool textureLocked = false;
-bool previewTexture = true;
-float newFloat = 0;
-char newScript[20000] = "-- Script here!";
+int channel_group_to_use = 0;
+int channel_in_group_to_use = 1;
+int mipmap_level_to_use = 0;
+char new_group_name[128] = "New Group";
+char new_text[1024] = "New Text";
+bool texture_locked = false;
+bool preview_texture = true;
+float new_float = 0;
+char new_script[20000] = "-- Script here!";
 
 } // namespace
 
@@ -58,7 +58,7 @@ void draw_tamper_window()
 {
     A3d_ChannelGroup* group = nullptr;
     A3d_Channel* channel = nullptr;
-    std::string channel_GUID;
+    std::string channel_guid;
 
     ImGui::Begin("Quest3DTamperer");
     ImGui::Spacing();
@@ -66,16 +66,16 @@ void draw_tamper_window()
         if(ImGui::CollapsingHeader("Channel groups")) {
             ImGui::Spacing();
 
-            ImGui::InputText("Pool name for new group", newGroupName, IM_ARRAYSIZE(newGroupName));
+            ImGui::InputText("Pool name for new group", new_group_name, IM_ARRAYSIZE(new_group_name));
             if(ImGui::Button("Load channel group file")) {
                 load_group_file_dialog.Open();
             }
             ImGui::Spacing();
 
-            ImGui::InputInt("A3d_ChannelGroup to use", &channelGroupToUse, 1, 10);
+            ImGui::InputInt("A3d_ChannelGroup to use", &channel_group_to_use, 1, 10);
             ImGui::Spacing();
 
-            group = quest3d::g_engine->GetChannelGroup(channelGroupToUse);
+            group = quest3d::g_engine->GetChannelGroup(channel_group_to_use);
             if(group != nullptr) {
                 ImGui::Text("Info of current channel group:");
                 ImGui::Text(ChannelGroup_GetPoolName(group));
@@ -90,8 +90,8 @@ void draw_tamper_window()
                 ImGui::Spacing();
 
                 ImGui::Text("Group has %i channels", ChannelGroup_GetChannelCount(group));
-                ImGui::InputInt("Channel in group to get", &channelInGroupToUse, 1, 10);
-                channel = ChannelGroup_GetChannel(group, channelInGroupToUse);
+                ImGui::InputInt("Channel in group to get", &channel_in_group_to_use, 1, 10);
+                channel = ChannelGroup_GetChannel(group, channel_in_group_to_use);
                 if(channel != nullptr) {
                     ImGui::Text(Channel_GetChannelName(channel));
 
@@ -100,62 +100,62 @@ void draw_tamper_window()
                     OLECHAR* guid_string;
                     StringFromCLSID(channel->GetChannelType().guid, &guid_string);
                     std::wstring wstring = std::wstring(guid_string);
-                    std::string stdstringGUID = util::Utf8Encode(wstring);
-                    channel_GUID = stdstringGUID;
+                    std::string stdstring_guid = util::utf8_encode(wstring);
+                    channel_guid = stdstring_guid;
 
-                    ImGui::Text(stdstringGUID.c_str());
+                    ImGui::Text(stdstring_guid.c_str());
 
                     if(ImGui::Button("Save as DOT Digraph")) {
                         save_graph_file_dialog.Open();
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "6E6FB247-4627")) {
-                        Aco_StringChannel* stringChannel(reinterpret_cast<Aco_StringChannel*>(channel));
+                    if(strstr(stdstring_guid.c_str(), "6E6FB247-4627")) {
+                        Aco_StringChannel* string_channel(reinterpret_cast<Aco_StringChannel*>(channel));
 
-                        ImGui::Text("Text in channel: %s", StringChannel_GetString(stringChannel));
+                        ImGui::Text("Text in channel: %s", StringChannel_GetString(string_channel));
 
                         if(ImGui::Button("Copy to clipboard")) {
-                            util::CopyToClipboard(quest3d::g_gameHandle, StringChannel_GetString((Aco_StringChannel*)channel));
+                            util::copy_to_clipboard(quest3d::g_game_handle, StringChannel_GetString((Aco_StringChannel*)channel));
                         }
                         ImGui::Spacing();
 
-                        ImGui::InputText("New text to set", newText, IM_ARRAYSIZE(newText));
+                        ImGui::InputText("New text to set", new_text, IM_ARRAYSIZE(new_text));
                         if(ImGui::Button("Set text")) {
-                            StringChannel_SetString((Aco_StringChannel*)channel, newText);
+                            StringChannel_SetString((Aco_StringChannel*)channel, new_text);
                         }
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "F26BB40B-B196")) {
+                    if(strstr(stdstring_guid.c_str(), "F26BB40B-B196")) {
                         ImGui::Text("Text in channel: %s", StringOperator_GetString(channel));
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "6514FE12-88CF")) {
+                    if(strstr(stdstring_guid.c_str(), "6514FE12-88CF")) {
                         ImGui::Text("Script: \n%s", Lua_GetScript(channel));
 
                         if(ImGui::Button("Copy to clipboard")) {
-                            util::CopyToClipboard(quest3d::g_gameHandle, Lua_GetScript(channel));
+                            util::copy_to_clipboard(quest3d::g_game_handle, Lua_GetScript(channel));
                         }
                         ImGui::Spacing();
 
-                        ImGui::InputTextMultiline("New script", newScript, IM_ARRAYSIZE(newScript));
+                        ImGui::InputTextMultiline("New script", new_script, IM_ARRAYSIZE(new_script));
                         if(ImGui::Button("Set script")) {
-                            Lua_SetScript(channel, newScript);
+                            Lua_SetScript(channel, new_script);
                         }
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "BC052C38-2D5D")) {
+                    if(strstr(stdstring_guid.c_str(), "BC052C38-2D5D")) {
                         Aco_DX8_Texture* texture = (Aco_DX8_Texture*)channel;
                         ImGui::Text("Mipmap level count: %d", Aco_DX8_Texture_GetMipMapLevels(texture));
-                        ImGui::InputInt("Select Mipmap level", &mipmapLevelToUse, 1, 10);
-                        ImGui::Checkbox("Enable preview", &previewTexture);
+                        ImGui::InputInt("Select Mipmap level", &mipmap_level_to_use, 1, 10);
+                        ImGui::Checkbox("Enable preview", &preview_texture);
 
                         // You should turn off the preview when swapping textures.
                         // Else the game WILL crash.
-                        if(!textureLocked && previewTexture) {
-                            IDirect3DTexture9* d3dTexture = Aco_DX8_Texture_GetTexture(texture);
-                            D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmapLevelToUse);
+                        if(!texture_locked && preview_texture) {
+                            IDirect3DTexture9* d3d_texture = Aco_DX8_Texture_GetTexture(texture);
+                            D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmap_level_to_use);
                             ImGui::Text("Texture size: %dx%d", description.Width, description.Height);
-                            ImGui::Image((void*)d3dTexture, ImVec2(description.Width, description.Height));
+                            ImGui::Image((void*)d3d_texture, ImVec2(description.Width, description.Height));
                         }
 
                         if(ImGui::Button("Save texture")) {
@@ -166,7 +166,7 @@ void draw_tamper_window()
                         }
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "376A9C13-8D66")) {
+                    if(strstr(stdstring_guid.c_str(), "376A9C13-8D66")) {
                         D3DMATERIAL9 material = Aco_DX8_MaterialChannel_GetMaterial(channel);
                         ImGui::Text("Power: %f", material.Power);
 
@@ -180,26 +180,26 @@ void draw_tamper_window()
                         ImGui::TextColored(diffuse, "Diffuse color");
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "21A8923D-B908")) {
-                        Aco_DX8_ObjectDataChannel* objectData = (Aco_DX8_ObjectDataChannel*)channel;
-                        ImGui::Text("Vertex count: %d", Aco_DX8_ObjectDataChannel_GetVertexCount(objectData));
+                    if(strstr(stdstring_guid.c_str(), "21A8923D-B908")) {
+                        Aco_DX8_ObjectDataChannel* object_data = (Aco_DX8_ObjectDataChannel*)channel;
+                        ImGui::Text("Vertex count: %d", Aco_DX8_ObjectDataChannel_GetVertexCount(object_data));
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "10C20C0A-7A55")) {
+                    if(strstr(stdstring_guid.c_str(), "10C20C0A-7A55")) {
                         // Aco_DX8_ObjectChannel_GetPosition currently results in an access
                         // violation - not wired up to the UI until that's understood.
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "BE69CCC4-CFC1")) {
+                    if(strstr(stdstring_guid.c_str(), "BE69CCC4-CFC1")) {
                         ImGui::Text("Float value: %f", Aco_FloatChannel_GetFloat(channel));
                         ImGui::Text("Default value: %f", Aco_FloatChannel_GetDefaultFloat(channel));
-                        ImGui::InputFloat("New float", &newFloat);
+                        ImGui::InputFloat("New float", &new_float);
                         if(ImGui::Button("Set float")) {
-                            Aco_FloatChannel_SetFloat(channel, newFloat);
+                            Aco_FloatChannel_SetFloat(channel, new_float);
                         }
                     }
 
-                    if(strstr(stdstringGUID.c_str(), "9D045960-EAC2")) {
+                    if(strstr(stdstring_guid.c_str(), "9D045960-EAC2")) {
                         // Aco_VectorChannel_GetVector is resolved but not wired up to the UI yet.
                     }
 
@@ -230,7 +230,7 @@ void draw_tamper_window()
 
     if(load_group_file_dialog.HasSelected()) {
         A3d_ChannelGroup* new_group =
-            quest3d::g_engine->LoadChannelGroup(load_group_file_dialog.GetSelected().string().c_str(), newGroupName);
+            quest3d::g_engine->LoadChannelGroup(load_group_file_dialog.GetSelected().string().c_str(), new_group_name);
         if(new_group != nullptr) {
             ChannelGroup_CallStartChannel(new_group);
         }
@@ -238,29 +238,29 @@ void draw_tamper_window()
     }
 
     if(save_texture_file_dialog.HasSelected()) {
-        std::ofstream binaryFile(save_texture_file_dialog.GetSelected().string().c_str(), std::ios::out | std::ios::binary);
-        if(binaryFile.is_open()) {
+        std::ofstream binary_file(save_texture_file_dialog.GetSelected().string().c_str(), std::ios::out | std::ios::binary);
+        if(binary_file.is_open()) {
             Aco_DX8_Texture* texture = (Aco_DX8_Texture*)channel;
             char* data = Aco_DX8_Texture_GetTextureBuffer(texture);
             int size = Aco_DX8_Texture_GetBufferSize(texture);
-            binaryFile.write(data, size);
+            binary_file.write(data, size);
         }
         load_group_file_dialog.ClearSelected();
     }
 
     if(load_texture_file_dialog.HasSelected()) {
-        if(strstr(channel_GUID.c_str(), "BC052C38-2D5D")) {
-            textureLocked = true;
+        if(strstr(channel_guid.c_str(), "BC052C38-2D5D")) {
+            texture_locked = true;
             Aco_DX8_Texture* texture = (Aco_DX8_Texture*)channel;
-            D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmapLevelToUse);
-            D3DLOCKED_RECT lockedRect;
-            lockedRect.pBits = (void*)Aco_DX8_Texture_GetTextureBuffer(texture);
-            lockedRect.Pitch = description.Width * 4;
+            D3DSURFACE_DESC description = Aco_DX8_Texture_GetTextureDescription(texture, mipmap_level_to_use);
+            D3DLOCKED_RECT locked_rect;
+            locked_rect.pBits = (void*)Aco_DX8_Texture_GetTextureBuffer(texture);
+            locked_rect.Pitch = description.Width * 4;
 
-            Aco_DX8_Texture_LockTexture(texture, mipmapLevelToUse, lockedRect);
+            Aco_DX8_Texture_LockTexture(texture, mipmap_level_to_use, locked_rect);
             Aco_DX8_Texture_LoadTextureFromFile(texture, (char*)load_texture_file_dialog.GetSelected().string().c_str());
-            Aco_DX8_Texture_UnlockTexture(texture, mipmapLevelToUse);
-            textureLocked = false;
+            Aco_DX8_Texture_UnlockTexture(texture, mipmap_level_to_use);
+            texture_locked = false;
         }
         load_group_file_dialog.ClearSelected();
     }

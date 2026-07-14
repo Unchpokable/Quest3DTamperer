@@ -11,14 +11,14 @@ int(__thiscall* ChannelGroup_GetChannelCount)(A3d_ChannelGroup* self) = nullptr;
 A3d_Channel*(__thiscall* ChannelGroup_GetChannel)(A3d_ChannelGroup* self, int) = nullptr;
 bool(__thiscall* ChannelGroup_GetGroupIsProtected)(A3d_ChannelGroup* self) = nullptr;
 bool(__thiscall* ChannelGroup_GetReadOnly)(A3d_ChannelGroup* self) = nullptr;
-void(__thiscall* ChannelGroup_SetGroupIsProtected)(A3d_ChannelGroup* self, bool newValue) = nullptr;
-void(__thiscall* ChannelGroup_SetReadOnly)(A3d_ChannelGroup* self, bool newValue) = nullptr;
-bool(__thiscall* ChannelGroup_SaveChannelGroup)(A3d_ChannelGroup* self, const char* fileName) = nullptr;
+void(__thiscall* ChannelGroup_SetGroupIsProtected)(A3d_ChannelGroup* self, bool new_value) = nullptr;
+void(__thiscall* ChannelGroup_SetReadOnly)(A3d_ChannelGroup* self, bool new_value) = nullptr;
+bool(__thiscall* ChannelGroup_SaveChannelGroup)(A3d_ChannelGroup* self, const char* file_name) = nullptr;
 int(__thiscall* ChannelGroup_GetGroupIndex)(A3d_ChannelGroup* self) = nullptr;
 void(__thiscall* ChannelGroup_CallStartChannel)(A3d_ChannelGroup* self) = nullptr;
 
 const char*(__thiscall* Channel_GetChannelName)(A3d_Channel* self) = nullptr;
-A3d_Channel*(__thiscall* Channel_GetChild)(A3d_Channel* self, int childNr) = nullptr;
+A3d_Channel*(__thiscall* Channel_GetChild)(A3d_Channel* self, int child_nr) = nullptr;
 int(__thiscall* Channel_GetChildCount)(A3d_Channel* self) = nullptr;
 int(__thiscall* Channel_GetChannelIDIndexNr)(A3d_Channel* self) = nullptr;
 
@@ -35,7 +35,7 @@ IDirect3DTexture9*(__thiscall* Aco_DX8_Texture_GetTexture)(Aco_DX8_Texture* self
 char*(__thiscall* Aco_DX8_Texture_GetTextureBuffer)(Aco_DX8_Texture* self) = nullptr;
 int(__thiscall* Aco_DX8_Texture_GetBufferSize)(Aco_DX8_Texture* self) = nullptr;
 BOOL(__thiscall* Aco_DX8_Texture_LoadTextureFromFile)(Aco_DX8_Texture* self, char* path) = nullptr;
-HRESULT(__thiscall* Aco_DX8_Texture_LockTexture)(Aco_DX8_Texture* self, int level, D3DLOCKED_RECT& pLockedRect) = nullptr;
+HRESULT(__thiscall* Aco_DX8_Texture_LockTexture)(Aco_DX8_Texture* self, int level, D3DLOCKED_RECT& p_locked_rect) = nullptr;
 void(__thiscall* Aco_DX8_Texture_UnlockTexture)(Aco_DX8_Texture* self, int level) = nullptr;
 int(__thiscall* Aco_DX8_Texture_GetMipMapLevels)(Aco_DX8_Texture* self) = nullptr;
 D3DSURFACE_DESC(__thiscall* Aco_DX8_Texture_GetTextureDescription)(Aco_DX8_Texture* self, int lvl) = nullptr;
@@ -53,7 +53,7 @@ void(__thiscall* Aco_FloatChannel_SetFloat)(void* self, float value) = nullptr;
 
 D3DXVECTOR3(__thiscall* Aco_VectorChannel_GetVector)(void* self) = nullptr;
 
-void ResolveApi()
+void resolve_api()
 {
     ChannelGroup_GetChannelGroupFileName = (const char*(__thiscall*)(A3d_ChannelGroup*))DetourFindFunction(
         "highpoly.dll", "?GetChannelGroupFileName@A3d_ChannelGroup@@UAEPBDXZ");

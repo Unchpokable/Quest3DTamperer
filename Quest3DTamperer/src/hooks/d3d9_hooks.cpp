@@ -3,64 +3,72 @@
 #include "hooks/d3d9_hooks.h"
 
 #include "quest3d/state.h"
+
 #include "ui/tamperer_window.h"
 
 // imgui_impl_win32.h intentionally omits this declaration (to avoid forcing
 // <windows.h> on every consumer) and asks callers to copy it in manually.
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+// NOTE: must keep this exact name - it's the real symbol imgui exports, not
+// ours to rename to match our naming convention.
+// NOLINTNEXTLINE(readability-identifier-naming)
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND h_wnd, UINT msg, WPARAM w_param, LPARAM l_param);
 
 namespace hooks
 {
+bool g_show_menu = false;
+bool g_force_im_gui_reinit = false;
+} // namespace hooks
 
 namespace
 {
 
-using Reset = long(__stdcall*)(LPDIRECT3DDEVICE9, D3DPRESENT_PARAMETERS*);
-using EndScene = long(__stdcall*)(LPDIRECT3DDEVICE9);
+using reset = long(__stdcall*)(LPDIRECT3DDEVICE9, D3DPRESENT_PARAMETERS*);
+using end_scene = long(__stdcall*)(LPDIRECT3DDEVICE9);
 
-Reset oReset = nullptr;
-EndScene oEndScene = nullptr;
-WNDPROC g_wndProcOriginal = nullptr;
-bool g_imguiInitialized = false;
+reset o_reset = nullptr;
+end_scene o_end_scene = nullptr;
+WNDPROC g_wnd_proc_original = nullptr;
+bool g_imgui_initialized = false;
 
-LRESULT __stdcall CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT __stdcall CALLBACK hk_wnd_proc(HWND h_wnd, UINT u_msg, WPARAM w_param, LPARAM l_param)
 {
-    if(ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam) && g_showMenu)
+    if(ImGui_ImplWin32_WndProcHandler(h_wnd, u_msg, w_param, l_param) && hooks::g_show_menu)
         return true;
 
-    return CallWindowProc(g_wndProcOriginal, hWnd, uMsg, wParam, lParam);
+    return CallWindowProc(g_wnd_proc_original, h_wnd, u_msg, w_param, l_param);
 }
 
-long __stdcall hkReset(LPDIRECT3DDEVICE9 pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters)
+long __stdcall hk_reset(LPDIRECT3DDEVICE9 p_device, D3DPRESENT_PARAMETERS* p_presentation_parameters)
 {
     ImGui_ImplDX9_InvalidateDeviceObjects();
-    long result = oReset(pDevice, pPresentationParameters);
+    long result = o_reset(p_device, p_presentation_parameters);
     ImGui_ImplDX9_CreateDeviceObjects();
 
     return result;
 }
 
-long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
+long __stdcall hk_end_scene(LPDIRECT3DDEVICE9 p_device)
 {
-    if(g_forceImGuiReinit) {
-        g_imguiInitialized = false;
-        g_forceImGuiReinit = false;
+    // TODO: REMOVE!! ONLY REINIT IMGUI IN RESET WHEN IDirecti3DDevice9::CooperativeLevel is DEVICE_LOST!
+    if(hooks::g_force_im_gui_reinit) {
+        g_imgui_initialized = false;
+        hooks::g_force_im_gui_reinit = false;
     }
 
-    if(!g_imguiInitialized) {
+    if(!g_imgui_initialized) {
         D3DDEVICE_CREATION_PARAMETERS params;
-        pDevice->GetCreationParameters(&params);
+        p_device->GetCreationParameters(&params);
 
         ImGui::CreateContext();
         ImGui_ImplWin32_Init(params.hFocusWindow);
-        ImGui_ImplDX9_Init(pDevice);
+        ImGui_ImplDX9_Init(p_device);
 
         ui::init_file_dialogs();
 
-        g_imguiInitialized = true;
+        g_imgui_initialized = true;
     }
 
-    if(g_showMenu) {
+    if(hooks::g_show_menu) {
         ImGui_ImplDX9_NewFrame();
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
@@ -78,22 +86,21 @@ long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice)
         ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
     }
 
-    return oEndScene(pDevice);
+    return o_end_scene(p_device);
 }
 
 } // namespace
 
-bool g_showMenu = false;
-bool g_forceImGuiReinit = false;
-
-void InstallD3D9Hooks()
+namespace hooks
 {
-    assert(kiero::bind(16, (void**)&oReset, hkReset) == kiero::Status::Success);
-    assert(kiero::bind(42, (void**)&oEndScene, hkEndScene) == kiero::Status::Success);
+void install_d3d9_hooks()
+{
+    assert(kiero::bind(16, (void**)&o_reset, hk_reset) == kiero::Status::Success);
+    assert(kiero::bind(42, (void**)&o_end_scene, hk_end_scene) == kiero::Status::Success);
 
-    quest3d::g_gameHandle = FindWindow(NULL, L"Audiosurf");
+    quest3d::g_game_handle = FindWindow(nullptr, L"Audiosurf");
 
-    g_wndProcOriginal = (WNDPROC)SetWindowLong(quest3d::g_gameHandle, GWL_WNDPROC, (LRESULT)hkWndProc);
+    g_wnd_proc_original = (WNDPROC)SetWindowLong(quest3d::g_game_handle, GWL_WNDPROC, (LRESULT)hk_wnd_proc);
 }
 
 } // namespace hooks

@@ -11,6 +11,8 @@ namespace quest3d
 extern EngineInterface* g_engine;
 
 // The Audiosurf window handle, found once the D3D9 hooks are installed.
-extern HWND g_gameHandle;
+extern HWND g_game_handle;
+
+extern HMODULE g_self_dll_handle;
 
 } // namespace quest3d
