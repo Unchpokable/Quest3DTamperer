@@ -20,19 +20,9 @@ DWORD WINAPI hook_install_thread(LPVOID self_instance)
         hooks::install_d3d9_hooks();
     }
 
-    // TODO: TOO BAD! HANDLE KEYBOARD AT EndScene, NOT OUTSIDE MAIN THREAD!
-    while(true) {
-        if(GetAsyncKeyState(VK_END) & 1) {
-            hooks::g_show_menu = !hooks::g_show_menu;
-        }
-
-        // Force ImGui to reinitialize.
-        // TODO: TOOOOOOOOOOOOO BAAAAAAAAAAAAAAAAAAAAAD!
-        if(GetAsyncKeyState(VK_INSERT) & 1) {
-            hooks::g_force_im_gui_reinit = true;
-        }
-    }
-
+    // Job done - the actual hooks (hk_reset/hk_end_scene/hk_wnd_proc) now run
+    // on the game's own render thread from here on. Hotkey polling lives in
+    // hk_end_scene() (see d3d9_hooks.cpp) instead of a loop on this thread.
     return 1;
 }
 
@@ -45,14 +35,18 @@ BOOL APIENTRY DllMain(HMODULE h_module, DWORD dw_reason, LPVOID /*lpReserved*/)
 
     switch(dw_reason) {
         case DLL_PROCESS_ATTACH:
-            ::DisableThreadLibraryCalls(h_module);
-            ::CreateThread(nullptr, 0, hook_install_thread, h_module, 0, nullptr);
+            {
+                HANDLE hook_thread = CreateThread(nullptr, 0, hook_install_thread, h_module, 0, nullptr);
+                if(hook_thread != nullptr) {
+                    CloseHandle(hook_thread);
+                }
 
-            DetourRestoreAfterWith();
+                DetourRestoreAfterWith();
 
-            hooks::install_channel_hook();
-            quest3d::api::resolve_api();
-            break;
+                hooks::install_channel_hook();
+                quest3d::api::resolve_api();
+                break;
+            }
 
         case DLL_PROCESS_DETACH:
             break;

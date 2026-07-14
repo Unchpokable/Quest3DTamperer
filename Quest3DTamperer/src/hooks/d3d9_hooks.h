@@ -5,13 +5,9 @@
 namespace hooks
 {
 
-// Toggled by the VK_END hotkey in main.cpp, read every EndScene to decide
-// whether to draw the ImGui window at all.
+// Toggled by the VK_END hotkey (polled once per frame in hk_end_scene), read
+// every EndScene to decide whether to draw the ImGui window at all.
 extern bool g_show_menu;
-
-// Set by the VK_INSERT hotkey in main.cpp to force ImGui to reinitialize on
-// the next EndScene.
-extern bool g_force_im_gui_reinit;
 
 // Binds kiero's D3D9 Reset/EndScene hooks and hooks the game window's WndProc.
 // Must run after kiero::init() reports a D3D9 render type.
