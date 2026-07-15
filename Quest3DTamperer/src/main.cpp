@@ -13,16 +13,13 @@ DWORD WINAPI hook_install_thread(LPVOID self_instance)
 {
     quest3d::g_self_dll_handle = reinterpret_cast<HMODULE>(self_instance);
 
-    if(kiero::init(kiero::RenderType::Auto) != kiero::Status::Success)
+    if(!hooks::install_d3d9_hooks())
         return 0;
 
-    if(kiero::getRenderType() == kiero::RenderType::D3D9) {
-        hooks::install_d3d9_hooks();
-    }
-
-    // Job done - the actual hooks (hk_reset/hk_end_scene/hk_wnd_proc) now run
-    // on the game's own render thread from here on. Hotkey polling lives in
-    // hk_end_scene() (see d3d9_hooks.cpp) instead of a loop on this thread.
+    // Job done - the actual hooks (hk_create_device/hk_reset/hk_end_scene/
+    // hk_release/hk_wnd_proc) now run on the game's own render thread from
+    // here on. Hotkey polling lives in hk_end_scene() (see d3d9_hooks.cpp)
+    // instead of a loop on this thread.
     return 1;
 }
 

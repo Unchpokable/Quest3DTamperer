@@ -5,6 +5,7 @@
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <tlhelp32.h>
 
 // DirectX 9. Pulled exclusively from the vendored DirectX SDK (June 2010, see
 // cmake/DirectXSDK.cmake) rather than the Windows SDK's d3d9.h, so the whole
@@ -19,9 +20,6 @@
 
 // Microsoft Detours
 #include <detours.h>
-
-// kiero
-#include "kiero/kiero.h"
 
 // Dear ImGui
 #include "imgui/backends/imgui_impl_dx9.h"

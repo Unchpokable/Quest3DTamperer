@@ -9,10 +9,12 @@ namespace hooks
 // every EndScene to decide whether to draw the ImGui window at all.
 extern bool g_show_menu;
 
-// Binds kiero's D3D9 Reset/EndScene hooks. Must run after kiero::init()
-// reports a D3D9 render type. The game window itself is hooked lazily, once
-// hk_end_scene() actually has a live device to ask for its real focus window
-// (see ensure_imgui_bound() in d3d9_hooks.cpp) - not here.
-void install_d3d9_hooks();
+// Resolves the live D3D9 vtable via a throwaway bootstrap device, then
+// Detours-hooks IDirect3D9::CreateDevice and IDirect3DDevice9::Reset/
+// EndScene/Release. Returns false if d3d9.dll isn't loaded yet or any step
+// fails - callers should treat that as "hooks are not installed", not retry.
+// The game window itself is hooked lazily, once a device is actually bound
+// (see bind_device() in d3d9_hooks.cpp) - not here.
+bool install_d3d9_hooks();
 
 } // namespace hooks

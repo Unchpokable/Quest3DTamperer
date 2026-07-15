@@ -34,10 +34,9 @@ More to come soon-ish.
 # Dependencies
 - The Quest3D 4.0 SDK (4.2 might work too) - proprietary, **not included in this repo**, see "Building" below
 - [UGraphViz](https://github.com/Ubpa/UGraphviz) - vendored in `Quest3DTamperer/third_party/UGraphviz`
-- [kiero](https://github.com/Rebzzel/kiero) - vendored in `Quest3DTamperer/third_party/kiero`
 - [Dear ImGui](https://github.com/ocornut/imgui) - vendored in `Quest3DTamperer/third_party/imgui`
-- [Detours](https://github.com/microsoft/Detours) - vendored in `Detours/`, built from source
-- [MinHook](https://github.com/TsudaKageyu/minhook) - vendored in `MinHook/`, built from source (kiero's hooking backend)
+- [Detours](https://github.com/microsoft/Detours) - vendored in `Detours/`, built from source (all D3D9/Quest3D hooking
+  goes through it directly - see `Quest3DTamperer/src/hooks/`)
 - The [DirectX SDK, June 2010](https://www.microsoft.com/en-us/download/details.aspx?id=6812) - vendored in
   `DirectX-SDK-June2010/`, headers only (needed for `d3dx9.h`/`d3dx9math.h`, which the Windows SDK no longer ships;
   nothing in this project calls an actual D3DX9 function, so none of its import libraries are linked)

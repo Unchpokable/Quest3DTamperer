@@ -18,15 +18,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 # Matches the original vcxproj's CharacterSet=Unicode, applied build-wide so
-# kiero/imgui (which both branch on _UNICODE) agree with our own code.
+# imgui (which branches on _UNICODE) agrees with our own code.
 add_compile_definitions(UNICODE _UNICODE)
 
 include(cmake/Detours.cmake)
 include(cmake/DirectXSDK.cmake)
 include(cmake/Quest3DSDK.cmake)
 
-add_subdirectory(MinHook)
-add_subdirectory(Quest3DTamperer/third_party/kiero)
 add_subdirectory(Quest3DTamperer/third_party/imgui)
 add_subdirectory(Quest3DTamperer/third_party/UGraphviz)
 
@@ -34,6 +32,7 @@ add_library(Quest3DTamperer SHARED
     Quest3DTamperer/src/main.cpp
     Quest3DTamperer/src/hooks/channel_hook.cpp
     Quest3DTamperer/src/hooks/d3d9_hooks.cpp
+    Quest3DTamperer/src/hooks/detour_transaction.cpp
     Quest3DTamperer/src/quest3d/api.cpp
     Quest3DTamperer/src/quest3d/state.cpp
     Quest3DTamperer/src/ui/tamperer_window.cpp
@@ -47,7 +46,6 @@ target_include_directories(Quest3DTamperer PRIVATE Quest3DTamperer/src)
 target_link_libraries(Quest3DTamperer PRIVATE
     detours
     dxsdk
-    kiero
     imgui
     UGraphviz
     quest3d_sdk
