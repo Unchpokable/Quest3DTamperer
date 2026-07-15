@@ -55,7 +55,6 @@ using namespace Ubpa;
 // Standard library
 #include <cassert>
 #include <fstream>
-#include <mutex>
 #include <sstream>
 #include <string>
 #include <string_view>
