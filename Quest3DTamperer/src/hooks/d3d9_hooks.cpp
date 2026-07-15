@@ -49,6 +49,14 @@ HWND g_bound_window = nullptr;
 
 LRESULT __stdcall CALLBACK hk_wnd_proc(HWND h_wnd, UINT u_msg, WPARAM w_param, LPARAM l_param)
 {
+    if(u_msg == WM_ACTIVATEAPP && w_param == FALSE && g_bound_device != nullptr) {
+        D3DDEVICE_CREATION_PARAMETERS params;
+        g_bound_device->GetCreationParameters(&params);
+        if(params.hFocusWindow == h_wnd) {
+            ShowWindow(h_wnd, SW_MINIMIZE);
+        }
+    }
+
     if(ImGui_ImplWin32_WndProcHandler(h_wnd, u_msg, w_param, l_param) && hooks::g_show_menu)
         return true;
 
@@ -186,6 +194,11 @@ long __stdcall hk_reset(LPDIRECT3DDEVICE9 p_device, D3DPRESENT_PARAMETERS* p_pre
 
 long __stdcall hk_end_scene(LPDIRECT3DDEVICE9 p_device)
 {
+    // late load
+    if(g_bound_device == nullptr) {
+        bind_device(p_device);
+    }
+
     // Polled here rather than on a separate thread: EndScene already runs
     // once per frame on the game's render thread, which naturally throttles
     // GetAsyncKeyState() and avoids racing hooks::g_show_menu against
@@ -221,17 +234,16 @@ long __stdcall hk_end_scene(LPDIRECT3DDEVICE9 p_device)
 
 ULONG __stdcall hk_release(LPDIRECT3DDEVICE9 p_device)
 {
-    const ULONG remaining_refs = o_release(p_device);
+    if(p_device == g_bound_device) {
+        const ULONG live_refs_before_this_call = p_device->AddRef() - 1;
+        o_release(p_device);
 
-    // Release() returns the post-decrement refcount. Zero means this call
-    // just freed the device - p_device is a dangling pointer from here on,
-    // so unbind_imgui() must not (and does not) dereference it, only compare
-    // its value.
-    if(remaining_refs == 0 && p_device == g_bound_device) {
-        unbind_imgui();
+        if(live_refs_before_this_call == 1) {
+            unbind_imgui();
+        }
     }
 
-    return remaining_refs;
+    return o_release(p_device);
 }
 
 // Creates a throwaway D3D9 object + device purely to read out the live
