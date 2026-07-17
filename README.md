@@ -1,12 +1,3 @@
->[!IMPORTANT]
-> The build was recently overhauled (monolithic source split up, MSBuild replaced with CMake + Ninja, missing
-> dependencies vendored - see "Building" below). It compiles and links cleanly again, but the actual in-game hooking
-> behavior hasn't been re-verified against a running copy of Audiosurf.
->
-> As of now, I am not actively working on this. Instead, I'm working on other projects under this organization.
->
-> If you have questions about Quest3D, you may contact me and I will try to answer to the best of my ability.
-
 # Quest3DTamperer
 **PLEASE NOTE THAT THIS IS STILL IN VERY EARLY DEVELOPMENT!**
 
