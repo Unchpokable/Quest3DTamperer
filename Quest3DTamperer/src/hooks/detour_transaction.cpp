@@ -38,7 +38,6 @@ void for_each_other_thread(thread_fn&& fn)
             HANDLE thread = OpenThread(THREAD_ALL_ACCESS, FALSE, entry.th32ThreadID);
             if(thread != nullptr) {
                 fn(thread);
-                CloseHandle(thread);
             }
         } while(Thread32Next(snapshot, &entry));
     }
