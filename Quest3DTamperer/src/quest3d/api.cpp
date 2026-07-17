@@ -59,8 +59,7 @@ void resolve_api()
         "highpoly.dll", "?GetChannelGroupFileName@A3d_ChannelGroup@@UAEPBDXZ");
     ChannelGroup_GetPoolName =
         (const char*(__thiscall*)(A3d_ChannelGroup*))DetourFindFunction("highpoly.dll", "?GetPoolName@A3d_ChannelGroup@@UAEPBDXZ");
-    // TODO: this resolves to the same mangled name as GetPoolName above (likely a copy-paste mistake predating this file
-    // split). Left unchanged - not touching game-interop logic during this infrastructure pass.
+    // BUG: this resolves to the same mangled name as GetPoolName above.
     ChannelGroup_GetChannelCount =
         (int(__thiscall*)(A3d_ChannelGroup*))DetourFindFunction("highpoly.dll", "?GetPoolName@A3d_ChannelGroup@@UAEPBDXZ");
     ChannelGroup_GetGroupIsProtected =

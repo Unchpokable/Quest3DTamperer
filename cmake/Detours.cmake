@@ -1,9 +1,20 @@
-# Builds Microsoft Detours from the vendored source tree in Detours/src.
+# Builds Microsoft Detours from the Detours/ git submodule
+# (https://github.com/microsoft/Detours). If Detours/src is empty, fetch it
+# with:
+#   git submodule update --init --recursive
+#
 # Detours ships only an nmake Makefile upstream, no CMake support, so we
 # mirror the source list from Detours/src/Makefile (the OBJS variable)
-# ourselves instead of patching the vendored tree.
+# ourselves instead of patching the submodule.
 
 set(DETOURS_SRC_DIR "${CMAKE_SOURCE_DIR}/Detours/src")
+
+if(NOT EXISTS "${DETOURS_SRC_DIR}/detours.cpp")
+    message(FATAL_ERROR
+        "Detours submodule not found at \"${DETOURS_SRC_DIR}\".\n"
+        "Fetch it with:\n"
+        "  git submodule update --init --recursive")
+endif()
 
 add_library(detours STATIC
     "${DETOURS_SRC_DIR}/detours.cpp"

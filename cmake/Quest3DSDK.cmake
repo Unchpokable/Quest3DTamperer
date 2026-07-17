@@ -1,12 +1,13 @@
 # The Quest3D SDK is proprietary and is never committed to this repository
-# (see Quest3DTamperer/q3d SDK/ which is gitignored). Point Q3D_SDK_DIR at a
-# local copy of it, either via -DQ3D_SDK_DIR=... or the QUEST3D_SDK_DIR
-# environment variable. Defaults to the conventional in-tree location.
+# (see Quest3D-SDK/ which is gitignored). Point Q3D_SDK_DIR at a local copy
+# of it, either via -DQ3D_SDK_DIR=... or the QUEST3D_SDK_DIR environment
+# variable. Defaults to the conventional in-tree location, next to
+# DirectX-SDK-June2010/ and Detours/.
 
 if(DEFINED ENV{QUEST3D_SDK_DIR})
     set(_q3d_sdk_default "$ENV{QUEST3D_SDK_DIR}")
 else()
-    set(_q3d_sdk_default "${CMAKE_SOURCE_DIR}/Quest3DTamperer/q3d SDK")
+    set(_q3d_sdk_default "${CMAKE_SOURCE_DIR}/Quest3D-SDK")
 endif()
 
 set(Q3D_SDK_DIR "${_q3d_sdk_default}" CACHE PATH

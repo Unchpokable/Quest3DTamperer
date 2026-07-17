@@ -343,3 +343,11 @@ healthchecksdb
 /build/
 /out/
 CMakeUserPresets.json
+
+# IDE configs
+/.vscode/
+
+# Vendored SDKs: proprietary/copyrighted, not redistributable - fetch
+# locally per cmake/Quest3DSDK.cmake and cmake/DirectXSDK.cmake.
+/Quest3D-SDK/
+/DirectX-SDK-June2010/
